@@ -1,3 +1,10 @@
+Timothy Portfolio v30 — repaired missing icon glyphs and forced a fresh load of versioned site assets.
+
+Pembaruan v30:
+- Sistem ikon dipindahkan ke stylesheet root site-consistency.css yang sudah dimuat pada halaman utama, jadi ikon tidak bergantung pada folder /assets.
+- Glyph Eye dan Instagram yang sebelumnya belum tersedia ditambahkan.
+- Cache key halaman dinaikkan ke portfolio-30 agar browser mengambil stylesheet terbaru.
+
 Timothy Portfolio v29 — refined Rocket Navigator with staggered, subtle star twinkles.
 
 Pembaruan v29:
