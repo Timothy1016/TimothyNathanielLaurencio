@@ -1,4 +1,13 @@
-Timothy Portfolio v30 — repaired missing icon glyphs and forced a fresh load of versioned site assets.
+Timothy Portfolio v32 — added a custom Compiler cover and embedded all four About project previews directly in the page.
+
+Pembaruan v32:
+- Cover ilustratif khusus untuk Compiler Project dibuat dengan palet hitam-krem.
+- Preview Compiler disematkan langsung ke about.html; total empat preview proyek di About kini tidak bergantung pada folder gambar yang ikut terunggah.
+- Cache key resource di About dinaikkan ke portfolio-32.
+
+Pembaruan v31:
+- Tiga gambar preview proyek di About disematkan langsung ke HTML sehingga tidak bergantung pada folder assets/ atau og/ yang ikut terunggah.
+- Seluruh cache key halaman dinaikkan ke portfolio-31.
 
 Pembaruan v30:
 - Sistem ikon dipindahkan ke stylesheet root site-consistency.css yang sudah dimuat pada halaman utama, jadi ikon tidak bergantung pada folder /assets.

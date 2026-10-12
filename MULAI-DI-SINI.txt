@@ -1,8 +1,8 @@
-TIMOTHY PORTFOLIO — PAKET LENGKAP v30
+TIMOTHY PORTFOLIO — PAKET LENGKAP v32
 
-Pembaruan terbaru: Bintang pada Rocket Navigator berkedip bergantian dengan kilau lembut. Animasi berjalan halus, ikut fokus keyboard, dan otomatis berhenti pada pengaturan reduced motion.
+Pembaruan terbaru: cover khusus Compiler ditambahkan, dan empat preview proyek di halaman About disematkan langsung di HTML agar tidak hilang jika folder gambar terlewat saat upload. Ikon sosial memakai sistem lokal.
 
-Gunakan satu ZIP ini saja. Paket berisi seluruh website dan aset; tidak perlu menggabungkannya dengan ZIP sebelumnya.
+Gunakan satu ZIP ini saja. Ekstrak seluruh isi langsung ke folder publik GitHub Pages yang sama dengan index.html. Empat preview proyek di About sudah disematkan langsung di HTML.
 
 Cara membuka versi terbaru di VS Code dan Live Server:
 1. Ekstrak ZIP ke folder baru.
