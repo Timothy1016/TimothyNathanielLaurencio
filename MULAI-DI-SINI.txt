@@ -1,0 +1,69 @@
+TIMOTHY PORTFOLIO — PAKET LENGKAP v29
+
+Pembaruan terbaru: Bintang pada Rocket Navigator berkedip bergantian dengan kilau lembut. Animasi berjalan halus, ikut fokus keyboard, dan otomatis berhenti pada pengaturan reduced motion.
+
+Gunakan satu ZIP ini saja. Paket berisi seluruh website dan aset; tidak perlu menggabungkannya dengan ZIP sebelumnya.
+
+Cara membuka versi terbaru di VS Code dan Live Server:
+1. Ekstrak ZIP ke folder baru.
+2. Di VS Code pilih File > Open Folder, lalu pilih folder hasil ekstrak.
+3. Pastikan index.html, about.html, dan contact.html terlihat langsung di folder hasil ekstrak.
+4. Klik kanan index.html atau halaman lain, lalu pilih Open with Live Server.
+5. Jika tab lama masih terbuka, muat ulang dengan Ctrl+Shift+R (Windows) atau Cmd+Shift+R (Mac).
+
+Pembaruan v19:
+- Seluruh halaman memakai satu palet hitam-krem, lebar konten, jarak, dan aturan responsif. Header lebih ringkas di ponsel, mode terang/gelap konsisten, dan tepi putih akibat margin bawaan browser dihapus.
+- Form Connect kini memiliki langkah akhir untuk meninjau jenis website, tujuan, fitur, tenggat, anggaran, referensi, dan kontak. Tombol Edit membawa pengunjung kembali ke bagian yang dipilih.
+- Kartu proyek menampilkan status Live, Prototype, atau Research secara terpisah dari kategori proyek.
+- blog.html siap untuk kategori dan filter artikel. blog-post-template.html menyediakan tata letak membaca, estimasi waktu baca otomatis, daftar isi dari judul bagian, serta artikel terkait dari tag yang sama.
+- Navigasi bahasa berlaku di semua halaman utama dan studi kasus dalam English, Mandarin Sederhana, dan Bahasa Indonesia; metadata dan teks alternatif yang relevan ikut diterjemahkan.
+- Studi kasus proyek publik menjelaskan peran, masalah, pendekatan teknis, dan tautan demo atau repositori. Angka hasil tidak ditambahkan tanpa pengukuran.
+- Layanan menjelaskan alur kerja dan cakupan, waktu respons umum 1–2 hari kerja, serta tiga proyek publik yang bisa diperiksa.
+- Tiga PDF CV memakai palet hitam-krem dan mengikuti bahasa pilihan di halaman CV.
+- Blog tetap kosong sampai cerita asli tersedia; testimoni hanya ditambahkan setelah ada kutipan asli.
+
+Halaman Blog sengaja tetap menampilkan keadaan kosong sampai cerita pertama diberikan. Untuk menyiapkan cerita nanti, salin blog-post-template.html ke file artikel baru, ganti petunjuk dengan cerita, hapus penanda noindex dan data-blog-draft-template, lalu tambahkan metadata artikel di blog-posts.js. Waktu baca dan daftar isi akan menyesuaikan isi aktual; artikel terkait memakai tag yang sama.
+
+
+CV tersedia dalam tiga bahasa dan tombol unduh mengikuti pilihan bahasa di situs: English, Bahasa Indonesia, dan Mandarin Sederhana. Blog tetap kosong sampai cerita asli siap dipublikasikan.
+
+Pembaruan v19:
+- Halaman About memiliki Project Constellation interaktif yang menghubungkan tujuh proyek ke studi kasus dan demo terkait.
+- Project Lab berisi demo browser untuk EquipmentHub, Inventory Management, Compiler, dan Coffee Ordering. Semua memakai data contoh lokal; tidak ada yang dikirim ke backend.
+- Dua proyek yang sudah live tetap membuka aplikasi aslinya; proyek riset membuka ringkasan riset.
+- Project Lab ditambahkan ke sitemap dan semua demo tersedia dalam English, Mandarin Sederhana, dan Bahasa Indonesia.
+
+Pembaruan v20:
+- Project Lab memiliki Lab Quest dengan empat misi yang memandu pengunjung mencoba alur EquipmentHub, Inventory, Compiler, dan Coffee Ordering.
+- Progres misi tersimpan di browser pengunjung dan dapat direset; data contoh pada setiap demo tetap lokal serta direset saat halaman dimuat ulang.
+- Lab Quest tersedia dalam English, Mandarin Sederhana, dan Bahasa Indonesia, termasuk label aksesibilitas dan status progres.
+
+Pembaruan v21:
+- Halaman CV memiliki navigasi ringkas dengan tautan ke Profile, Education, Projects, Experience, Research, dan Skills; bagian aktif mengikuti posisi baca.
+- Pendidikan dan pengalaman memakai timeline interaktif yang bisa dibuka dengan klik, Enter, atau Space. Detail memakai informasi yang sudah tercantum di CV.
+- Navigasi dan timeline menyesuaikan ponsel, mendukung fokus keyboard, dan mengikuti pilihan bahasa situs.
+
+Pembaruan v22:
+- Favicon SVG berbentuk lingkaran ditambahkan ke seluruh halaman dengan mempertahankan artwork favicon yang sama; PNG tetap tersedia sebagai fallback.
+
+Pembaruan v23:
+- Project Constellation memakai hub TNL yang terlihat jelas dan jalur radial ke tujuh proyek. Jalur dan kartu pilihan menyala saat pengunjung memilih proyek.
+- Peta dilengkapi nomor pilihan, ring visual yang halus, fokus keyboard, dan animasi yang mengikuti pengaturan reduced motion; tampilan ponsel tetap memakai kartu dua kolom.
+
+Pembaruan v24:
+- Project Constellation menjadi graph interaktif: pengunjung bisa menggeser kanvas, zoom dengan scroll atau kontrol, dan menyusun ulang posisi node. Tombol reset mengembalikan zoom serta posisi awal.
+- Hover atau fokus keyboard menyorot proyek terkait; klik node tetap menampilkan detail, studi kasus, dan demo. Hubungan mengelompokkan proyek bertema alur kerja, produk, bahasa, interaksi, dan sistem teknis.
+- Mode ponsel mempertahankan kartu proyek yang mudah disentuh. Interaksi mendukung fokus keyboard dan menghormati pengaturan reduced motion.
+
+Pembaruan v25:
+- Batas zoom diperbaiki agar graf tidak mengecil sampai sulit dibaca; kontrol diperkuat supaya tetap sejajar.
+- Proyek yang tidak sedang terkait tetap lebih mudah dibaca, dan catatan demo dipindahkan agar tidak tertutup widget mengambang.
+
+Pembaruan v26:
+- Terjemahan Indonesia dilengkapi di seluruh halaman menggunakan kamus bersama sebagai cadangan untuk teks yang belum memiliki data-id langsung. English, Mandarin Sederhana, dan Indonesia tetap mengikuti pilihan bahasa situs.
+- Project Constellation kini menampilkan semua node dengan kontras lebih seimbang saat pertama dibuka. Node yang berhubungan disorot saat dipilih, dan node lain tetap terbaca.
+- Navigasi keyboard memakai Tab, Enter/Space, tombol panah, Home, dan End. Petunjuk interaksi juga terlihat di tampilan ponsel; kartu proyek tetap mudah disentuh.
+- Audit sumber memeriksa teks terjemahan, label aksesibilitas, teks alternatif gambar, target tautan internal, validasi brief kontak, dan konfigurasi pengiriman FormSubmit.
+Catatan pengiriman form:
+- Form diatur untuk mengirim melalui FormSubmit dengan metode POST, CAPTCHA, respons otomatis sesuai bahasa, dan pengalihan ke success.html.
+- Setelah upload, lakukan uji kirim pertama dari browser dan cek email penerima beserta folder spam. FormSubmit mungkin meminta konfirmasi aktivasi lewat email sebelum meneruskan kiriman ke inbox.

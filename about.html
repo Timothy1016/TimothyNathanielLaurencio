@@ -1,451 +1,197 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html data-theme="dark" lang="en">
 <head>
-<title>About | Timothy Nathaniel Laurencio</title>
-<meta name="description" content="About Timothy Nathaniel Laurencio — Software Engineer and B.Eng. in Computer Science and Technology from Nanjing Tech University, China.">
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#000000">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-<style>
-:root{
-  --bg:#000000;
-  --surface:#090909;
-  --surface-2:#111111;
-  --text:#F1EEE8;
-  --soft:#C3BDB4;
-  --muted:#8D867E;
-  --border:rgba(255,255,255,.10);
-  --accent:#A58D78;
-  --accent-2:#B5A07E;
-  --olive:#858778;
-  --header:rgba(0,0,0,.96);
-}
-
-html[data-theme="light"]{
-  --bg:#EDE3D3;
-  --surface:#F7F0E5;
-  --surface-2:#E9DECE;
-  --text:#241F1A;
-  --soft:#5F564D;
-  --muted:#756A60;
-  --border:rgba(36,31,26,.14);
-  --accent:#806A58;
-  --accent-2:#927B61;
-  --olive:#6F7565;
-  --header:rgba(237,227,211,.95);
-  color-scheme:light;
-}
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--bg)}
-body{
-  margin:0;
-  min-height:100vh;
-  background:var(--bg);
-  color:var(--text);
-  font-family:"Times New Roman",Times,serif;
-  transition:background .2s ease,color .2s ease;
-}
-a{color:inherit}
-button,input,textarea,select{font:inherit}
-img{max-width:100%;display:block}
-.container{width:min(1180px,calc(100% - 40px));margin:auto}
-header{
-  position:sticky;top:0;z-index:1000;
-  background:var(--header);
-  border-bottom:1px solid var(--border);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-}
-.nav{
-  min-height:68px;
-  display:flex;align-items:center;justify-content:space-between;gap:24px;
-}
-
-
-
-.nav-links{display:flex;align-items:center;gap:24px}
-.nav-links a{
-  position:relative;text-decoration:none;color:var(--soft);
-  font-size:.92rem;
-}
-.nav-links a:hover,.nav-links a.active{color:var(--text)}
-.nav-links a::after{
-  content:"";position:absolute;left:0;bottom:-8px;width:0;height:1px;
-  background:var(--accent);transition:width .18s ease;
-}
-.nav-links a:hover::after,.nav-links a.active::after{width:100%}
-.nav-tools{display:flex;align-items:center;gap:8px}
-.icon-btn{
-  width:38px;height:38px;border:1px solid var(--border);border-radius:50%;
-  background:transparent;color:var(--text);cursor:pointer;
-}
-.icon-btn:hover{border-color:color-mix(in srgb,var(--accent) 50%,var(--border))}
-.mobile-btn{display:none}
-.mobile-menu{display:none}
-main{overflow:hidden}
-.hero{
-  padding:110px 0 86px;
-  border-bottom:1px solid var(--border);
-}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:10px;
-  margin-bottom:24px;color:var(--accent);
-  font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
-}
-.eyebrow::before{content:"";width:28px;height:1px;background:var(--accent-2)}
-h1,h2,h3,p{margin-top:0}
-h1{
-  max-width:1000px;margin-bottom:26px;
-  font-size:clamp(3.3rem,7.3vw,7.4rem);
-  line-height:.92;letter-spacing:-.045em;font-weight:500;
-}
-h2{
-  font-size:clamp(2.25rem,4.2vw,4.35rem);
-  line-height:.98;letter-spacing:-.035em;font-weight:500;
-}
-p{color:var(--soft);line-height:1.72;font-size:1.03rem}
-.section{padding:96px 0;border-bottom:1px solid var(--border)}
-.section-head{
-  display:grid;grid-template-columns:.42fr 1fr;gap:50px;
-  align-items:start;margin-bottom:54px;
-}
-.section-copy{max-width:690px}
-.button{
-  min-height:44px;padding:0 18px;
-  display:inline-flex;align-items:center;justify-content:center;gap:9px;
-  border:1px solid var(--border);border-radius:999px;
-  text-decoration:none;transition:.18s ease;
-}
-.button.primary{background:var(--text);color:var(--bg);border-color:var(--text)}
-.button.secondary{background:transparent;color:var(--text)}
-.button:hover{transform:translateY(-1px)}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-.reveal.visible{opacity:1;transform:none}
-footer{padding:34px 0;color:var(--muted)}
-.footer-inner{display:flex;justify-content:space-between;gap:20px;font-size:.88rem}
-.toast{
-  position:fixed;right:18px;bottom:18px;z-index:5000;
-  padding:11px 14px;border:1px solid var(--border);
-  background:var(--surface);color:var(--text);border-radius:10px;
-  opacity:0;transform:translateY(8px);pointer-events:none;transition:.18s ease;
-}
-.toast.show{opacity:1;transform:none}
-@media(max-width:850px){
-  .nav-links{display:none}
-  .mobile-btn{display:inline-grid;place-items:center}
-  .mobile-menu{
-    padding:14px 20px 18px;border-top:1px solid var(--border);
-    background:var(--header)
-  }
-  .mobile-menu.open{display:grid;gap:14px}
-  .mobile-menu a{text-decoration:none;color:var(--soft)}
-  .section-head{grid-template-columns:1fr;gap:20px}
-}
-@media(max-width:600px){
-  .container{width:min(100% - 24px,1180px)}
-  .hero{padding:78px 0 62px}
-  .section{padding:70px 0}
-  h1{font-size:clamp(2.85rem,16vw,4.5rem)}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
-  .reveal{opacity:1;transform:none}
-}
-
-.about-hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.62fr);gap:70px;align-items:end}
-.about-photo{position:relative}
-.about-photo img{
-  width:100%;aspect-ratio:4/5;object-fit:cover;
-  border:1px solid var(--border);background:var(--surface);
-}
-.about-note{margin-top:12px;color:var(--muted);font-size:.86rem}
-.about-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
-.short-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:54px}
-.short-quote{font-size:clamp(2rem,3.4vw,3.6rem);line-height:1.06;color:var(--text)}
-.story-copy{max-width:760px}
-.story-copy p{font-size:1.1rem}
-.work-rows{border-top:1px solid var(--border)}
-.work-row{
-  display:grid;grid-template-columns:80px .6fr 1fr;gap:26px;
-  padding:28px 0;border-bottom:1px solid var(--border)
-}
-.work-row .num{color:var(--muted)}
-.work-row h3{font-size:1.45rem;font-weight:500;margin:0}
-.work-row p{margin:0}
-.photo-grid{display:grid;grid-template-columns:1.3fr .8fr .8fr;gap:14px}
-.photo-grid figure{margin:0}
-.photo-grid img{width:100%;height:100%;object-fit:cover;min-height:300px;border:1px solid var(--border)}
-.photo-grid figure:first-child img{min-height:520px}
-.about-cta{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
-@media(max-width:850px){
- .about-hero-grid,.short-grid,.about-cta{grid-template-columns:1fr}
- .about-photo{max-width:520px}
- .work-row{grid-template-columns:50px 1fr}
- .work-row p{grid-column:2}
- .photo-grid{grid-template-columns:1fr 1fr}
- .photo-grid figure:first-child{grid-column:1/-1}
-}
-
-
-/* =====================================================================
-   FINAL SITE-WIDE THEME AUDIT
-   Dark = pure black / charcoal with no page-level glow.
-   Light = soft beige.
-   ===================================================================== */
-html[data-theme="dark"],
-html[data-theme="dark"] body{
-  --bg:#000000 !important;
-  --surface:#090909 !important;
-  --surface-2:#111111 !important;
-  --text:#F2EEE8 !important;
-  --soft:#C8C1B8 !important;
-  --muted:#918A82 !important;
-  --border:rgba(255,255,255,.10) !important;
-  --header:rgba(0,0,0,.97) !important;
-  background:#000000 !important;
-  color:#F2EEE8 !important;
-}
-
-html[data-theme="dark"] main,
-html[data-theme="dark"] .hero,
-html[data-theme="dark"] .section,
-html[data-theme="dark"] footer{
-  background:#000000 !important;
-}
-
-html[data-theme="dark"] header{
-  background:rgba(0,0,0,.97) !important;
-  box-shadow:none !important;
-}
-
-html[data-theme="dark"] .button,
-html[data-theme="dark"] .icon-btn{
-  box-shadow:none !important;
-}
-
-html[data-theme="light"],
-html[data-theme="light"] body{
-  --bg:#EDE3D3 !important;
-  --surface:#F7F0E5 !important;
-  --surface-2:#E9DECE !important;
-  --text:#241F1A !important;
-  --soft:#5F564D !important;
-  --muted:#756A60 !important;
-  --border:rgba(36,31,26,.14) !important;
-  --header:rgba(237,227,211,.96) !important;
-  background:#EDE3D3 !important;
-  color:#241F1A !important;
-}
-
-
-
-/* FINAL BLACK / BEIGE BLEND */
-html[data-theme="dark"],html[data-theme="dark"] body{
-  --bg:#000!important;--surface:#090909!important;--surface-2:#111!important;--text:#f2eee8!important;--soft:#c8c1b8!important;--muted:#918a82!important;--border:rgba(255,255,255,.10)!important;
-  background:#000!important;color:#f2eee8!important;
-}
-html[data-theme="light"],html[data-theme="light"] body{
-  --bg:#ede3d3!important;--surface:#f4ecdf!important;--surface-2:#e5d9c7!important;--text:#241f1a!important;--soft:#5f564d!important;--muted:#756a60!important;--border:rgba(36,31,26,.14)!important;
-  background:#ede3d3!important;color:#241f1a!important;
-}
-html[data-theme="dark"] main,html[data-theme="dark"] .hero,html[data-theme="dark"] .section,html[data-theme="dark"] footer{background:#000!important}
-html[data-theme="light"] main,html[data-theme="light"] .hero,html[data-theme="light"] .section,html[data-theme="light"] footer{background:#ede3d3!important}
-.section,.hero{box-shadow:none!important}
-
-
-
-html[data-theme="light"] .short-grid,html[data-theme="light"] .work-rows,html[data-theme="light"] .about-cta{background:transparent!important}
-html[data-theme="dark"] .short-grid,html[data-theme="dark"] .work-rows,html[data-theme="dark"] .about-cta{background:transparent!important}
-
-</style>
-<link rel="stylesheet" href="site-brand.css">
-<link rel="stylesheet" href="site-header.css">
-<script src="site-header.js" defer></script>
-
-<link rel="canonical" href="https://timothy1016.github.io/TimothyNathanielLaurencio/about.html">
-<link rel="icon" type="image/png" sizes="96x96" href="favicon.png">
-<meta property="og:title" content="About | Timothy Nathaniel Laurencio">
-<meta property="og:description" content="About Timothy Nathaniel Laurencio — Software Engineer and B.Eng. in Computer Science and Technology from Nanjing Tech University, China.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://timothy1016.github.io/TimothyNathanielLaurencio/about.html">
+  <meta charset="utf-8"><script defer src="site-translations.js?v=portfolio-26"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="About Timothy Nathaniel Laurencio, his background, research interests, and selected software projects.">
+  <meta name="theme-color" content="#11100e">
+  <title>About &amp; Projects | Timothy Nathaniel Laurencio</title>
+  <link rel="canonical" href="https://timothy1016.github.io/TimothyNathanielLaurencio/about.html">
+  <link rel="icon" href="favicon.png" type="image/png"><link rel="icon" type="image/svg+xml" sizes="any" href="favicon-round.svg?v=portfolio-22">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('portfolio-theme')||'dark'}catch(e){}</script>
+  <link rel="stylesheet" href="assets/icons.css?v=portfolio-19">
+  <link rel="stylesheet" href="site-brand.css?v=portfolio-19">
+  <link rel="stylesheet" href="site-header.css?v=portfolio-19">
+  <link rel="stylesheet" href="about.css?v=portfolio-19">
+  <link rel="stylesheet" href="site-avatar.css?v=portfolio-29">
+  <link rel="stylesheet" href="typography-times.css?v=portfolio-19">
+  <script defer src="site-header.js?v=portfolio-26"></script>
+  <script defer src="analytics.js"></script>
+  <script defer src="site-avatar.js?v=portfolio-29"></script>
+  <meta property="og:title" content="About &amp; Projects | Timothy Nathaniel Laurencio">
+  <meta property="og:description" content="Background, research interests, and selected software projects by Timothy Nathaniel Laurencio.">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://timothy1016.github.io/TimothyNathanielLaurencio/about.html">
+  <meta property="og:image" content="https://timothy1016.github.io/TimothyNathanielLaurencio/og-preview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Timothy Nathaniel Laurencio","url":"https://timothy1016.github.io/TimothyNathanielLaurencio/about.html","jobTitle":"Software Engineer","alumniOf":{"@type":"CollegeOrUniversity","name":"Nanjing Tech University"},"sameAs":["https://github.com/Timothy1016","https://www.linkedin.com/in/timothy-nathaniel-laurencio-727005413","https://www.instagram.com/timothynathaniellaurencio/"]}</script>
+  <link rel="stylesheet" href="site-palette.css?v=portfolio-19">
+  <link rel="stylesheet" href="site-finish.css?v=portfolio-19">
+  <meta name="portfolio-build" content="v26">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Editorial black and cream portfolio preview featuring Timothy Nathaniel Laurencio and his portrait.">
+  <meta name="twitter:title" content="About &amp; Projects | Timothy Nathaniel Laurencio">
+  <meta name="twitter:description" content="About Timothy Nathaniel Laurencio, his background, research interests, and selected software projects.">
+  <meta name="twitter:image" content="https://timothy1016.github.io/TimothyNathanielLaurencio/og-preview.jpg">
+  <meta name="twitter:image:alt" content="Editorial black and cream portfolio preview featuring Timothy Nathaniel Laurencio and his portrait.">
+  <link rel="stylesheet" href="site-consistency.css?v=portfolio-19">
+  <link rel="stylesheet" href="project-constellation.css?v=portfolio-26">
 </head>
-<body>
-
-<header id="site-header"><div class="site-header-inner">
-<a class="brand" href="index.html#home" aria-label="Timothy Nathaniel Laurencio — Home"><img src="logo.png" alt="Timothy Nathaniel Laurencio logo" width="76" height="76"></a>
-<nav id="site-primary-nav" class="nav-links" aria-label="Primary navigation">
-<a href="index.html#work">Work</a>
-<a class="active" aria-current="page" href="about.html">About</a>
-<a href="index.html#skills">Skills</a>
-<a href="journey.html">Journey</a>
-<a href="contact.html">Contact</a>
-</nav>
-<div class="site-header-tools">
-<button aria-label="Toggle sound" class="icon-btn" id="soundBtn" type="button"><i class="fa-solid fa-volume-low"></i></button>
-<button aria-label="Toggle theme" class="icon-btn" id="themeBtn" type="button"><i class="fa-regular fa-sun"></i></button>
-<button aria-label="Toggle language" class="icon-btn site-language" id="langBtn" type="button">中文</button>
-<button id="site-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-primary-nav"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
-</div></div></header>
-
-<main>
-<section class="hero">
-  <div class="container about-hero-grid">
-    <div class="reveal">
-      <div class="eyebrow" data-en="About me" data-zh="关于我">About me</div>
-      <h1 data-en="I learn by making things, then asking why they worked." data-zh="我通过做东西来学习，然后再问自己：为什么它能工作？">I learn by making things, then asking why they worked.</h1>
-      <p class="section-copy" data-en="I studied Computer Science at Nanjing Tech University. Most of what I remember best came from building projects, debugging them, and trying again when the first version was messy." data-zh="我在南京工业大学学习计算机科学。我记得最深的东西，大多来自做项目、调试，以及在第一版很乱的时候重新来过。">I studied Computer Science at Nanjing Tech University. Most of what I remember best came from building projects, debugging them, and trying again when the first version was messy.</p>
-      <div class="about-actions">
-        <a class="button primary" href="TimothyNathanielLaurencio_CV.pdf" target="_blank"><i class="fa-regular fa-file-lines"></i><span data-en="Resume" data-zh="简历">Resume</span></a>
-        <a class="button secondary" href="index.html#work"><span data-en="See my work" data-zh="查看项目">See my work</span></a>
-      </div>
+<body id="top">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header id="site-header">
+    <div class="site-header-inner">
+      <div class="brand-cluster"><a class="brand" href="index.html#home" aria-label="Timothy Nathaniel Laurencio — Home"><img src="logo-256.webp" width="76" height="76" alt="Timothy Nathaniel Laurencio logo"></a><div class="brand-socials" role="group" aria-label="Social links">
+        <a class="brand-social-link" data-social="email" href="mailto:timothynathaniellaurencio@gmail.com" aria-label="Email Timothy" title="Email"><i class="fa-regular fa-envelope" aria-hidden="true"></i></a>
+        <a class="brand-social-link" data-social="linkedin" href="https://www.linkedin.com/in/timothy-nathaniel-laurencio-727005413" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+        <a class="brand-social-link" data-social="github" href="https://github.com/Timothy1016" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+        <a class="brand-social-link" data-social="instagram" href="https://www.instagram.com/timothynathaniellaurencio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="igHeaderGradient" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#feda75"/><stop offset="42%" stop-color="#fa7e1e"/><stop offset="68%" stop-color="#d62976"/><stop offset="100%" stop-color="#4f5bd5"/></linearGradient></defs><rect fill="none" height="17" rx="5" stroke="url(#igHeaderGradient)" stroke-width="2" width="17" x="3.5" y="3.5"/><circle cx="12" cy="12" fill="none" r="4" stroke="url(#igHeaderGradient)" stroke-width="2"/><circle cx="17.4" cy="6.8" fill="url(#igHeaderGradient)" r="1.15"/></svg></a>
+        <a class="brand-social-link" data-social="whatsapp" href="https://wa.me/6285286289012" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+      </div></div>
+      <nav class="nav-links" id="site-primary-nav" aria-label="Primary navigation"><a class="active" href="about.html" data-en="About" data-zh="关于我">About</a><a href="blog.html" data-en="Blog" data-zh="博客">Blog</a><a href="contact.html" data-en="Connect" data-zh="联系">Connect</a><a href="resume.html" data-en="CV" data-zh="简历">CV</a></nav>
+      <div class="site-header-tools"><button id="site-menu-toggle" type="button" aria-controls="site-primary-nav" aria-expanded="false" aria-label="Open menu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button></div>
     </div>
-    <div class="about-photo reveal">
-      <img src="foto1.png" alt="Portrait of Timothy">
-      <div class="about-note">Computer Science · Nanjing Tech University</div>
+  </header>
+
+  <main id="main-content" class="portfolio-about">
+    <div class="about-container">
+      <header class="about-page-heading">
+        <p class="about-kicker" data-en="ABOUT · BACKGROUND · SELECTED PROJECTS" data-zh="关于 · 经历 · 精选项目">ABOUT · BACKGROUND · SELECTED PROJECTS</p>
+        <h1>TIMOTHY NATHANIEL LAURENCIO</h1>
+      </header>
+
+      <section class="about-intro" aria-labelledby="about-me-heading">
+        <div class="about-intro-copy">
+          <h2 id="about-me-heading" data-en="About Me" data-zh="关于我">About Me</h2>
+          <p data-en="I studied Computer Science and Technology at Nanjing Tech University and am based in Nanjing, China. I learn by turning questions into practical software, then improving it through feedback." data-zh="我在南京工业大学学习计算机科学与技术，目前在中国南京。我习惯把问题变成可用的软件，再根据反馈持续改进。">I studied Computer Science and Technology at Nanjing Tech University and am based in Nanjing, China. I learn by turning questions into practical software, then improving it through feedback.</p>
+          <p data-en="My projects span web products, learning systems, inventory tools, and a C# compiler. I care about clear engineering, useful details, and interfaces people can understand without a long manual." data-zh="我的项目涵盖 Web 产品、学习系统、库存工具和 C# 编译器。我重视清晰的工程实现、实用细节，以及容易理解的界面。">My projects span web products, learning systems, inventory tools, and a C# compiler. I care about clear engineering, useful details, and interfaces people can understand without a long manual.</p>
+          <p data-en="Teaching, student community work, and studying abroad have shaped how I communicate and collaborate. They remind me to make technical work useful to the people who rely on it." data-zh="教学、学生社群工作和海外求学经历塑造了我的沟通与合作方式，也让我始终关注技术如何真正帮助使用者。">Teaching, student community work, and studying abroad have shaped how I communicate and collaborate. They remind me to make technical work useful to the people who rely on it.</p>
+          <div class="about-facts" aria-label="Profile details">
+            <div><span data-en="Education" data-zh="教育">Education</span><strong>Computer Science · NJTech</strong></div>
+            <div><span data-en="Based in" data-zh="所在地">Based in</span><strong>Nanjing, China</strong></div>
+            <div><span data-en="Interests" data-zh="兴趣方向">Interests</span><strong>Software · AI · Research</strong></div>
+          </div>
+        </div>
+        <figure class="about-portrait">
+          <img src="profile-github-720.webp" width="720" height="1073" alt="Timothy Nathaniel Laurencio at his university graduation" fetchpriority="high">
+        </figure>
+      </section>
+
+      <section class="about-research" aria-labelledby="research-heading">
+        <div class="section-title-row">
+          <div><p class="about-kicker" data-en="AREAS I AM EXPLORING" data-zh="正在探索的方向">AREAS I AM EXPLORING</p><h2 id="research-heading" data-en="Current Research &amp; Development" data-zh="当前研究与开发">Current Research &amp; Development</h2></div>
+        </div>
+        <ul class="research-list">
+          <li><strong data-en="Energy-aware 5G scheduling:" data-zh="5G 节能调度：">Energy-aware 5G scheduling:</strong> <span data-en="Explore the balance between resource allocation quality and energy use." data-zh="探索资源分配质量与能源消耗之间的平衡。">Explore the balance between resource allocation quality and energy use.</span></li>
+          <li><strong data-en="Learning systems:" data-zh="学习系统：">Learning systems:</strong> <span data-en="Build HSK practice tools that bring review, writing, stories, and progress together." data-zh="构建整合复习、书写、故事和学习进度的 HSK 学习工具。">Build HSK practice tools that bring review, writing, stories, and progress together.</span></li>
+          <li><strong data-en="Practical software products:" data-zh="实用软件产品：">Practical software products:</strong> <span data-en="Design clear workflows for inventory, personal organization, and offline-capable web apps." data-zh="为库存管理、个人效率和支持离线的 Web 应用设计清晰流程。">Design clear workflows for inventory, personal organization, and offline-capable web apps.</span></li>
+        </ul>
+        <a class="research-link" href="research.html"><span data-en="Read the 5G project summary" data-zh="阅读 5G 项目摘要">Read the 5G project summary</span><span aria-hidden="true">↗</span></a>
+      </section>
+
+      <aside class="about-callout">
+        <p data-en="Interested in software projects or research conversations?" data-zh="想交流软件项目或研究方向吗？">Interested in software projects or research conversations?</p>
+        <a href="mailto:timothynathaniellaurencio@gmail.com"><span data-en="Reach out via email" data-zh="通过电子邮件联系">Reach out via email</span><span aria-hidden="true">↗</span></a>
+      </aside>
+
+      <section class="about-projects" id="projects" aria-labelledby="projects-heading">
+        <div class="section-title-row projects-title-row">
+          <div><p class="about-kicker" data-en="SELECTED WORK" data-zh="精选项目">SELECTED WORK</p><h2 id="projects-heading" data-en="Key Projects" data-zh="重点项目">Key Projects</h2></div>
+          <p data-en="A selection of systems I have designed and built, with case studies that show how they work." data-zh="这里展示了我设计和开发的一些系统，并附有介绍其实现方式的项目案例。">A selection of systems I have designed and built, with case studies that show how they work.</p>
+        </div>
+
+        <div class="project-filter-bar">
+          <div class="project-filter-label" data-en="Explore by category" data-zh="按类别浏览" data-id="Telusuri berdasarkan kategori">Explore by category</div>
+          <div class="project-filters" role="group" aria-label="Filter projects by category" data-en-aria-label="Filter projects by category" data-zh-aria-label="按类别筛选项目" data-id-aria-label="Filter proyek berdasarkan kategori">
+            <button class="project-filter-button is-active" type="button" data-project-filter="all" aria-pressed="true" data-en="All" data-zh="全部" data-id="Semua">All</button>
+            <button class="project-filter-button" type="button" data-project-filter="product" aria-pressed="false" data-en="Products" data-zh="产品" data-id="Produk">Products</button>
+            <button class="project-filter-button" type="button" data-project-filter="research" aria-pressed="false" data-en="Research" data-zh="研究" data-id="Riset">Research</button>
+            <button class="project-filter-button" type="button" data-project-filter="tools" aria-pressed="false" data-en="Tools" data-zh="工具" data-id="Tools">Tools</button>
+          </div>
+          <span class="project-filter-status" id="project-filter-status" role="status" aria-live="polite" aria-atomic="true">Showing all 7 projects</span>
+        </div>
+
+        <article id="project-equipmenthub" class="about-project-card" data-project-category="tools">
+          <div class="project-meta"><span class="project-year">2026</span><div class="project-meta-tags"><span class="project-label" data-en="INVENTORY SYSTEM" data-zh="库存管理系统">INVENTORY SYSTEM</span><span class="project-status project-status--prototype" data-en="PROTOTYPE" data-zh="原型" data-id="PROTOTYPE">PROTOTYPE</span></div></div>
+          <div class="project-copy"><h3><a href="project-equipmenthub.html">EquipmentHub</a></h3><p data-en="A browser-based equipment operations system for inventory, custody, events, maintenance, weekly checks, reporting, and portable backup." data-zh="一个基于浏览器的设备管理系统，涵盖库存、领用、活动、维护、周检、报告和数据备份。">A browser-based equipment operations system for inventory, custody, events, maintenance, weekly checks, reporting, and portable backup.</p>
+            <p class="project-highlights"><span data-en="Highlights" data-zh="功能亮点">Highlights</span><span aria-hidden="true"> · </span><span data-en="Equipment movements · maintenance tracking · reports" data-zh="设备流转 · 维护跟踪 · 报告">Equipment movements · maintenance tracking · reports</span></p><div class="project-actions"><a href="project-equipmenthub.html" data-en="Case study ↗" data-zh="项目案例 ↗" data-id="Studi kasus ↗">Case study ↗</a><a href="project-lab.html#equipmenthub" data-en="Try sample ↗" data-zh="试用示例 ↗" data-id="Coba demo ↗">Try sample ↗</a><a href="https://github.com/Timothy1016/EquipmentHub" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+          <div class="project-image"><img src="og/inventory.png" width="1200" height="630" loading="lazy" alt="EquipmentHub inventory project preview"></div>
+        </article>
+
+        <article id="project-learning-chinese" class="about-project-card" data-project-category="product">
+          <div class="project-meta"><span class="project-year">2026</span><div class="project-meta-tags"><span class="project-label" data-en="LEARNING PRODUCT" data-zh="学习产品">LEARNING PRODUCT</span><span class="project-status project-status--live" data-en="LIVE" data-zh="已上线" data-id="LIVE">LIVE</span></div></div>
+          <div class="project-copy"><h3><a href="project-learning-chinese.html">Learning Chinese Web</a></h3><p data-en="An HSK-focused learning product with personalized study, spaced repetition, Hanzi writing, games, stories, and progress insights." data-zh="一款面向 HSK 的学习产品，包含个性化学习、间隔复习、汉字书写、游戏、故事和学习进度分析。">An HSK-focused learning product with personalized study, spaced repetition, Hanzi writing, games, stories, and progress insights.</p>
+            <p class="project-highlights"><span data-en="Highlights" data-zh="功能亮点">Highlights</span><span aria-hidden="true"> · </span><span data-en="Spaced repetition · HSK 1–6 · progress insights" data-zh="间隔复习 · HSK 1–6 · 学习进度洞察">Spaced repetition · HSK 1–6 · progress insights</span></p><div class="project-actions"><a href="project-learning-chinese.html" data-en="Case study ↗" data-zh="项目案例 ↗" data-id="Studi kasus ↗">Case study ↗</a><a href="https://learning-chinese-web-tnl5.vercel.app/" target="_blank" rel="noopener noreferrer" data-en="Try live ↗" data-zh="体验线上版 ↗" data-id="Coba versi live ↗">Try live ↗</a><a href="https://github.com/Timothy1016/Learning-Chinese-Web" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+          <div class="project-image project-image--cover"><a class="project-cover-link" href="https://learning-chinese-web-tnl5.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Learning Chinese Web live website in a new tab"><span class="project-open-badge" aria-hidden="true">OPEN LIVE SITE ↗</span><picture><source srcset="assets/learning-chinese-cover.webp" type="image/webp"><img src="assets/learning-chinese-og.jpg" width="1200" height="630" loading="lazy" decoding="async" alt="Learning Chinese Web project cover with its HSK study dashboard screenshot on a black and beige background."></picture></a></div>
+        </article>
+
+        <article id="project-emotions" class="about-project-card" data-project-category="product">
+          <div class="project-meta"><span class="project-year">2026</span><div class="project-meta-tags"><span class="project-label" data-en="OFFLINE PWA" data-zh="离线 PWA">OFFLINE PWA</span><span class="project-status project-status--live" data-en="LIVE" data-zh="已上线" data-id="LIVE">LIVE</span></div></div>
+          <div class="project-copy"><h3><a href="project-box-emotions.html">Knowing Your Emotions</a></h3><p data-en="An offline-capable multilingual app for exploring emotions, keeping notes, and reviewing personal patterns." data-zh="一款支持离线的多语言应用，可用于认识情绪、记录笔记并回顾个人情绪规律。">An offline-capable multilingual app for exploring emotions, keeping notes, and reviewing personal patterns.</p>
+            <p class="project-highlights"><span data-en="Highlights" data-zh="功能亮点">Highlights</span><span aria-hidden="true"> · </span><span data-en="Offline access · notes and history · three languages" data-zh="离线访问 · 笔记与历史记录 · 三种语言">Offline access · notes and history · three languages</span></p><div class="project-actions"><a href="project-box-emotions.html" data-en="Case study ↗" data-zh="项目案例 ↗" data-id="Studi kasus ↗">Case study ↗</a><a href="https://timothy1016.github.io/Knowing-your-emotion-web/#home" target="_blank" rel="noopener noreferrer" data-en="Try live ↗" data-zh="体验线上版 ↗" data-id="Coba versi live ↗">Try live ↗</a><a href="https://github.com/Timothy1016/Knowing-your-emotion-web" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+          <div class="project-image project-image--cover"><a class="project-cover-link" href="https://timothy1016.github.io/Knowing-your-emotion-web/#home" target="_blank" rel="noopener noreferrer" aria-label="Open Knowing Your Emotions live website in a new tab"><span class="project-open-badge" aria-hidden="true">OPEN LIVE SITE ↗</span><picture><source srcset="assets/knowing-your-emotions-cover.webp" type="image/webp"><img src="assets/knowing-your-emotions-og.jpg" width="1200" height="630" loading="lazy" decoding="async" alt="Knowing Your Emotions project cover with an emotion cards screen on a black and beige background."></picture></a></div></div>
+        </article>
+
+        <article id="project-compiler" class="about-project-card" data-project-category="tools">
+          <div class="project-meta"><span class="project-year">2025</span><div class="project-meta-tags"><span class="project-label" data-en="SYSTEMS PROJECT" data-zh="系统项目">SYSTEMS PROJECT</span><span class="project-status project-status--prototype" data-en="PROTOTYPE" data-zh="原型" data-id="PROTOTYPE">PROTOTYPE</span></div></div>
+          <div class="project-copy"><h3><a href="project-compiler.html">Compiler Project</a></h3><p data-en="A C# compiler core with tokenization, parsing, syntax analysis, intermediate representation, and live feedback." data-zh="一个使用 C# 构建的编译器核心，涵盖词法分析、解析、语法分析、中间表示和实时反馈。">A C# compiler core with tokenization, parsing, syntax analysis, intermediate representation, and live feedback.</p>
+            <p class="project-highlights"><span data-en="Highlights" data-zh="功能亮点">Highlights</span><span aria-hidden="true"> · </span><span data-en="Tokenization · parsing · live feedback" data-zh="词法分析 · 语法解析 · 实时反馈">Tokenization · parsing · live feedback</span></p><div class="project-actions"><a href="project-compiler.html" data-en="Case study ↗" data-zh="项目案例 ↗" data-id="Studi kasus ↗">Case study ↗</a><a href="project-lab.html#compiler" data-en="Try sample ↗" data-zh="试用示例 ↗" data-id="Coba demo ↗">Try sample ↗</a></div></div>
+          <div class="project-image"><img src="og/compiler.png" width="1200" height="630" loading="lazy" alt="Compiler project preview"></div>
+        </article>
+        <article id="project-5g" class="about-project-card" data-project-category="research">
+          <div class="project-meta"><span class="project-year">5G</span><div class="project-meta-tags"><span class="project-label" data-en="ACADEMIC PROJECT" data-zh="学术项目" data-id="PROYEK AKADEMIK">ACADEMIC PROJECT</span><span class="project-status project-status--research" data-en="RESEARCH" data-zh="研究" data-id="RISET">RESEARCH</span></div></div>
+          <div class="project-copy"><h3><a href="research.html" data-en="Energy-Efficient 5G Scheduling" data-zh="5G 节能资源调度" data-id="Penjadwalan Sumber Daya 5G Hemat Energi">Energy-Efficient 5G Scheduling</a></h3><p data-en="An academic project exploring how 5G resource scheduling can balance allocation quality with energy use." data-zh="一项学术研究，探索 5G 资源调度如何平衡分配质量与能源消耗。" data-id="Proyek akademik yang mengeksplorasi cara menyeimbangkan kualitas alokasi sumber daya 5G dengan konsumsi energi.">An academic project exploring how 5G resource scheduling can balance allocation quality with energy use.</p>
+            <p class="project-highlights"><span data-en="Focus" data-zh="研究重点" data-id="Fokus">Focus</span><span aria-hidden="true"> · </span><span data-en="Resource allocation · energy efficiency" data-zh="资源分配 · 能源效率" data-id="Alokasi sumber daya · efisiensi energi">Resource allocation · energy efficiency</span></p><div class="project-actions"><a href="research.html" data-en="Research summary ↗" data-zh="研究摘要 ↗" data-id="Ringkasan riset ↗">Research summary ↗</a></div></div>
+          <div class="project-image project-art research-art" aria-hidden="true"><span class="art-kicker">ENERGY-AWARE</span><strong>5G</strong><span class="art-caption">RESOURCE SCHEDULING</span><div class="research-signal"><i></i><i></i><i></i><i></i><i></i></div></div>
+        </article>
+        <div class="additional-projects"><p data-en="Earlier project case studies" data-zh="早期项目案例" data-id="Studi kasus proyek terdahulu">Earlier project case studies</p><div><a id="project-coffee" data-project-category="product" href="project-coffee.html"><span data-en="Coffee Ordering App" data-zh="咖啡订购应用" data-id="Aplikasi Pemesanan Kopi">Coffee Ordering App</span><span class="project-status project-status--prototype" data-en="PROTOTYPE" data-zh="原型" data-id="PROTOTYPE">PROTOTYPE</span><span aria-hidden="true">↗</span></a><a class="additional-demo-link" data-demo-category="product" href="project-lab.html#coffee" data-en="Try demo ↗" data-zh="试用演示 ↗" data-id="Coba demo ↗">Try demo ↗</a><a id="project-inventory" data-project-category="tools" href="project-inventory.html"><span data-en="Inventory Management System" data-zh="库存管理系统" data-id="Sistem Manajemen Inventaris">Inventory Management System</span><span class="project-status project-status--prototype" data-en="PROTOTYPE" data-zh="原型" data-id="PROTOTYPE">PROTOTYPE</span><span aria-hidden="true">↗</span></a><a class="additional-demo-link" data-demo-category="tools" href="project-lab.html#inventory" data-en="Try demo ↗" data-zh="试用演示 ↗" data-id="Coba demo ↗">Try demo ↗</a></div></div>
+      <section class="project-constellation" id="project-constellation" aria-labelledby="constellation-heading">
+        <div class="section-title-row constellation-heading-row">
+          <div><p class="about-kicker" data-en="A MAP OF THE WORK" data-zh="项目关系图" data-id="PETA KARYA">A MAP OF THE WORK</p><h2 id="constellation-heading" data-en="Project Constellation" data-zh="项目星图" data-id="Konstelasi Proyek">Project Constellation</h2></div>
+          <p data-en="Explore seven connected projects. Select a node for details; use arrow keys to move between nodes. On desktop, drag the canvas to pan, scroll to zoom, or drag nodes to rearrange them." data-zh="探索七个相互关联的项目。选择节点查看详情，也可使用方向键切换节点。在桌面端拖动画布以平移、滚动以缩放，或拖动节点重新排列。" data-id="Jelajahi tujuh proyek yang saling terhubung. Pilih titik untuk melihat detail; gunakan tombol panah untuk berpindah. Di desktop, geser kanvas untuk menggeser peta, gulir untuk zoom, atau geser titik untuk mengatur ulang posisinya.">Explore seven connected projects. Select a node for details; use arrow keys to move between nodes. On desktop, drag the canvas to pan, scroll to zoom, or drag nodes to rearrange them.</p>
+        </div>
+        <div class="constellation-layout">
+          <div class="constellation-stage" role="group" aria-label="Interactive project graph" data-en-aria-label="Interactive project graph" data-zh-aria-label="互动项目关系图" data-id-aria-label="Graph proyek interaktif" aria-describedby="constellation-map-hint">
+            <div class="constellation-canvas" id="constellation-canvas">
+              <svg class="constellation-lines" viewBox="0 0 900 560" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="constellation-spoke" data-kind="spoke" data-project="equipmenthub" d="M450 280 C370 248 260 156 162 101"/><path class="constellation-spoke" data-kind="spoke" data-project="learning" d="M450 280 C460 222 466 145 468 73"/><path class="constellation-spoke" data-kind="spoke" data-project="emotions" d="M450 280 C555 225 665 144 738 129"/><path class="constellation-spoke" data-kind="spoke" data-project="compiler" d="M450 280 C350 286 250 312 180 330"/><path class="constellation-spoke" data-kind="spoke" data-project="research" d="M450 280 C525 280 590 280 657 280"/><path class="constellation-spoke" data-kind="spoke" data-project="inventory" d="M450 280 C450 334 450 389 450 437"/><path class="constellation-spoke" data-kind="spoke" data-project="coffee" d="M450 280 C566 334 662 389 738 426"/><path class="constellation-edge" data-kind="edge" data-from="equipmenthub" data-to="inventory" d="M162 101 C248 202 360 337 450 437"/><path class="constellation-edge" data-kind="edge" data-from="inventory" data-to="coffee" d="M450 437 C548 458 650 456 738 426"/><path class="constellation-edge" data-kind="edge" data-from="learning" data-to="emotions" d="M468 73 C562 65 660 86 738 129"/><path class="constellation-edge" data-kind="edge" data-from="learning" data-to="compiler" d="M468 73 C398 164 279 273 180 330"/><path class="constellation-edge" data-kind="edge" data-from="compiler" data-to="research" d="M180 330 C336 368 523 352 657 280"/><path class="constellation-edge" data-kind="edge" data-from="emotions" data-to="coffee" d="M738 129 C794 222 792 338 738 426"/></svg>
+            <div class="constellation-core" aria-hidden="true"><span>TNL</span><small data-en="BUILD · LEARN · RESEARCH" data-zh="构建 · 学习 · 研究" data-id="MEMBANGUN · BELAJAR · RISET">BUILD · LEARN · RESEARCH</small></div>
+            <button class="constellation-node is-selected" type="button" data-project="equipmenthub" aria-pressed="true" data-title-en="EquipmentHub" data-title-zh="EquipmentHub" data-title-id="EquipmentHub" data-summary-en="A browser-based workspace for equipment, custody, maintenance, and weekly checks." data-summary-zh="一个用于管理设备、领用、维护和每周检查的浏览器工作区。" data-summary-id="Ruang kerja berbasis browser untuk mengelola peralatan, peminjaman, pemeliharaan, dan pemeriksaan mingguan." data-focus-en="Equipment workflows" data-focus-zh="设备管理流程" data-focus-id="Alur operasional peralatan" data-stack="JavaScript · IndexedDB · GitHub Pages" data-case="project-equipmenthub.html" data-demo="project-lab.html#equipmenthub" data-demo-type="sample" style="--node-x:18%;--node-y:18%"><span class="node-index">01</span><span class="node-name" data-en="EquipmentHub" data-zh="EquipmentHub" data-id="EquipmentHub">EquipmentHub</span><span class="node-kind" data-en="Equipment workflows" data-zh="设备管理" data-id="Operasional peralatan">Equipment workflows</span></button>
+            <button class="constellation-node" type="button" data-project="learning" aria-pressed="false" data-title-en="Learning Chinese Web" data-title-zh="Learning Chinese Web" data-title-id="Learning Chinese Web" data-summary-en="A live HSK learning product with spaced review, writing practice, games, and progress insights." data-summary-zh="一款在线 HSK 学习产品，包含间隔复习、书写练习、游戏和学习进度分析。" data-summary-id="Produk belajar HSK yang sudah online, dengan pengulangan terjadwal, latihan menulis, permainan, dan wawasan kemajuan." data-focus-en="Language learning" data-focus-zh="语言学习" data-focus-id="Pembelajaran bahasa" data-stack="Next.js · React · Supabase · TypeScript" data-case="project-learning-chinese.html" data-demo="https://learning-chinese-web-tnl5.vercel.app/" data-demo-type="live" style="--node-x:52%;--node-y:13%"><span class="node-index">02</span><span class="node-name" data-en="Learning Chinese Web" data-zh="Learning Chinese Web" data-id="Learning Chinese Web">Learning Chinese Web</span><span class="node-kind" data-en="Language learning" data-zh="语言学习" data-id="Pembelajaran bahasa">Language learning</span></button>
+            <button class="constellation-node" type="button" data-project="emotions" aria-pressed="false" data-title-en="Knowing Your Emotions" data-title-zh="认识你的情绪" data-title-id="Mengenal Emosimu" data-summary-en="An offline-capable multilingual app for emotion notes and personal reflection." data-summary-zh="一款支持离线的多语言应用，用于记录情绪与个人反思。" data-summary-id="Aplikasi multibahasa yang bisa digunakan offline untuk mencatat emosi dan refleksi pribadi." data-focus-en="Emotional literacy" data-focus-zh="情绪素养" data-focus-id="Literasi emosi" data-stack="JavaScript · PWA · Offline storage" data-case="project-box-emotions.html" data-demo="https://timothy1016.github.io/Knowing-your-emotion-web/#home" data-demo-type="live" style="--node-x:82%;--node-y:23%"><span class="node-index">03</span><span class="node-name" data-en="Knowing Your Emotions" data-zh="认识你的情绪" data-id="Mengenal Emosimu">Knowing Your Emotions</span><span class="node-kind" data-en="Emotional literacy" data-zh="情绪素养" data-id="Literasi emosi">Emotional literacy</span></button>
+            <button class="constellation-node" type="button" data-project="compiler" aria-pressed="false" data-title-en="Compiler Project" data-title-zh="编译器项目" data-title-id="Proyek Compiler" data-summary-en="A C# compiler core that makes tokenization, parsing, and intermediate output easier to inspect." data-summary-zh="一个使用 C# 构建的编译器核心，让词法分析、语法解析和中间输出更容易检查。" data-summary-id="Inti compiler berbasis C# yang membuat proses tokenisasi, parsing, dan keluaran antara lebih mudah diperiksa." data-focus-en="Language processing" data-focus-zh="语言处理" data-focus-id="Pemrosesan bahasa" data-stack="C# · Tokenizer · Parser" data-case="project-compiler.html" data-demo="project-lab.html#compiler" data-demo-type="sample" style="--node-x:20%;--node-y:59%"><span class="node-index">04</span><span class="node-name" data-en="Compiler Project" data-zh="编译器项目" data-id="Proyek Compiler">Compiler Project</span><span class="node-kind" data-en="Language processing" data-zh="语言处理" data-id="Pemrosesan bahasa">Language processing</span></button>
+            <button class="constellation-node" type="button" data-project="research" aria-pressed="false" data-title-en="Energy-Efficient 5G Scheduling" data-title-zh="5G 节能资源调度" data-title-id="Penjadwalan Sumber Daya 5G Hemat Energi" data-summary-en="An academic project exploring the balance between 5G resource allocation quality and energy use." data-summary-zh="一项学术项目，探索 5G 资源分配质量与能源消耗之间的平衡。" data-summary-id="Proyek akademik yang mengeksplorasi keseimbangan kualitas alokasi sumber daya 5G dan konsumsi energi." data-focus-en="Energy-aware scheduling" data-focus-zh="能耗感知调度" data-focus-id="Penjadwalan hemat energi" data-stack="5G · Resource scheduling · Research" data-case="#project-5g" data-demo="research.html" data-demo-type="research" style="--node-x:73%;--node-y:50%"><span class="node-index">05</span><span class="node-name" data-en="5G Scheduling" data-zh="5G 调度" data-id="Penjadwalan 5G">5G Scheduling</span><span class="node-kind" data-en="Research" data-zh="研究" data-id="Riset">Research</span></button>
+            <button class="constellation-node" type="button" data-project="inventory" aria-pressed="false" data-title-en="Inventory Management System" data-title-zh="库存管理系统" data-title-id="Sistem Manajemen Inventaris" data-summary-en="A Django inventory workflow for products, locations, stock movement, alerts, and operational visibility." data-summary-zh="一个基于 Django 的库存流程，涵盖产品、位置、库存变化、提醒和运营概览。" data-summary-id="Alur inventaris berbasis Django untuk produk, lokasi, pergerakan stok, peringatan, dan pemantauan operasional." data-focus-en="Stock &amp; sales workflows" data-focus-zh="库存与销售流程" data-focus-id="Alur stok dan penjualan" data-stack="Django · JavaScript" data-case="project-inventory.html" data-demo="project-lab.html#inventory" data-demo-type="sample" style="--node-x:50%;--node-y:78%"><span class="node-index">06</span><span class="node-name" data-en="Inventory Management" data-zh="库存管理" data-id="Manajemen Inventaris">Inventory Management</span><span class="node-kind" data-en="Stock workflows" data-zh="库存流程" data-id="Alur stok">Stock workflows</span></button>
+            <button class="constellation-node" type="button" data-project="coffee" aria-pressed="false" data-title-en="Coffee Ordering App" data-title-zh="咖啡点单应用" data-title-id="Aplikasi Pemesanan Kopi" data-summary-en="A product flow for choosing a drink, customizing it, and reviewing a dynamic cart total." data-summary-zh="一个用于选择饮品、自定义选项并查看动态购物车总价的产品流程。" data-summary-id="Alur produk untuk memilih minuman, menyesuaikan pesanan, dan melihat total keranjang yang berubah otomatis." data-focus-en="Ordering workflow" data-focus-zh="点单流程" data-focus-id="Alur pemesanan" data-stack="Java · UI logic" data-case="project-coffee.html" data-demo="project-lab.html#coffee" data-demo-type="sample" style="--node-x:82%;--node-y:76%"><span class="node-index">07</span><span class="node-name" data-en="Coffee Ordering" data-zh="咖啡点单" data-id="Pemesanan Kopi">Coffee Ordering</span><span class="node-kind" data-en="Ordering workflow" data-zh="点单流程" data-id="Alur pemesanan">Ordering workflow</span></button>
+            </div>
+            <div class="constellation-controls" role="group" aria-label="Graph controls" data-en-aria-label="Graph controls" data-zh-aria-label="关系图控制" data-id-aria-label="Kontrol graph">
+              <button type="button" class="constellation-control" data-map-zoom-out aria-label="Zoom out" data-en-aria-label="Zoom out" data-zh-aria-label="缩小" data-id-aria-label="Perkecil"><span aria-hidden="true">−</span></button>
+              <output class="constellation-zoom" id="constellation-zoom" aria-live="polite">100%</output>
+              <button type="button" class="constellation-control" data-map-zoom-in aria-label="Zoom in" data-en-aria-label="Zoom in" data-zh-aria-label="放大" data-id-aria-label="Perbesar"><span aria-hidden="true">+</span></button>
+              <button type="button" class="constellation-control constellation-reset-control" data-map-reset aria-label="Reset graph layout" data-en-aria-label="Reset graph layout" data-zh-aria-label="重置关系图布局" data-id-aria-label="Atur ulang graph"><span aria-hidden="true">↺</span></button>
+            </div>
+            <p class="constellation-hint" id="constellation-map-hint" data-en="Select a project for details · Arrow keys move between nodes · Desktop: drag to pan, scroll to zoom" data-zh="选择项目查看详情 · 使用方向键切换节点 · 桌面端：拖动平移，滚动缩放" data-id="Pilih proyek untuk melihat detail · Tombol panah untuk berpindah · Desktop: geser untuk menggeser peta, gulir untuk zoom">Select a project for details · Arrow keys move between nodes · Desktop: drag to pan, scroll to zoom</p>
+          </div>
+          <aside class="constellation-detail" aria-labelledby="constellation-selected-title" aria-live="polite" aria-atomic="true">
+            <p class="detail-kicker"><span class="detail-index" id="constellation-selected-index" aria-hidden="true">01 / 07</span><span data-en="SELECTED PROJECT" data-zh="所选项目" data-id="PROYEK TERPILIH">SELECTED PROJECT</span></p>
+            <h3 id="constellation-selected-title">EquipmentHub</h3>
+            <p class="detail-summary" id="constellation-selected-summary">A browser-based workspace for equipment, custody, maintenance, and weekly checks.</p>
+            <dl class="detail-facts"><div><dt data-en="Focus" data-zh="重点" data-id="Fokus">Focus</dt><dd id="constellation-selected-focus">Equipment workflows</dd></div><div><dt data-en="Stack" data-zh="技术栈" data-id="Teknologi">Stack</dt><dd id="constellation-selected-stack">JavaScript · IndexedDB · GitHub Pages</dd></div></dl>
+            <div class="detail-actions"><a class="constellation-case-link" id="constellation-case-link" href="project-equipmenthub.html" data-en="Case study ↗" data-zh="项目案例 ↗" data-id="Studi kasus ↗">Case study ↗</a><a class="constellation-demo-link" id="constellation-demo-link" href="project-lab.html#equipmenthub" data-en="Try sample demo ↗" data-zh="试用示例演示 ↗" data-id="Coba demo sampel ↗">Try sample demo ↗</a></div>
+            <p class="constellation-note" data-en="Sample demos run in this browser and reset when refreshed. Live projects open in a new tab." data-zh="示例演示在当前浏览器中运行，刷新后会重置。在线项目会在新标签页打开。" data-id="Demo sampel berjalan di browser ini dan akan direset saat halaman dimuat ulang. Proyek live terbuka di tab baru.">Sample demos run in this browser and reset when refreshed. Live projects open in a new tab.</p>
+          </aside>
+        </div>
+      </section>
+
+      </section>
+
+      <section class="about-next"><div><p class="about-kicker" data-en="KEEP IN TOUCH" data-zh="保持联系">KEEP IN TOUCH</p><h2 data-en="Have a project, question, or idea to discuss?" data-zh="想聊项目、问题或新的想法吗？">Have a project, question, or idea to discuss?</h2></div><a class="about-next-button" href="contact.html"><span data-en="Connect with me" data-zh="联系我">Connect with me</span><span aria-hidden="true">↗</span></a></section>
     </div>
-  </div>
-</section>
+  </main>
 
-<section class="section">
- <div class="container short-grid reveal">
-   <div>
-     <div class="eyebrow" data-en="The short version" data-zh="简单来说">The short version</div>
-     <div class="short-quote" data-en="I’m more interested in understanding than looking impressive." data-zh="比起看起来厉害，我更在意真正理解。">I’m more interested in understanding than looking impressive.</div>
-   </div>
-   <div class="story-copy">
-     <p data-en="I like software because there is always something concrete to test. An idea either becomes useful, breaks somewhere, or teaches me what I missed." data-zh="我喜欢软件，是因为总有东西可以实际测试。一个想法要么变得有用，要么在某处出错，要么让我发现自己漏掉了什么。">I like software because there is always something concrete to test. An idea either becomes useful, breaks somewhere, or teaches me what I missed.</p>
-     <p data-en="That is also how I approach learning. I prefer building a real version early, seeing what feels wrong, and improving it instead of waiting for the perfect plan." data-zh="这也是我学习的方式。我更喜欢尽早做出一个真实版本，看看哪里不对，再慢慢改，而不是一直等一个完美计划。">That is also how I approach learning. I prefer building a real version early, seeing what feels wrong, and improving it instead of waiting for the perfect plan.</p>
-     <p data-en="Outside code, I care a lot about people, faith, travel, and the small experiences that change how I think." data-zh="代码之外，我也很在意人与人之间的关系、信仰、旅行，以及那些慢慢改变我想法的小经历。">Outside code, I care a lot about people, faith, travel, and the small experiences that change how I think.</p>
-   </div>
- </div>
-</section>
-
-<section class="section">
- <div class="container">
-   <div class="section-head reveal">
-     <div class="eyebrow" data-en="How I usually work" data-zh="我通常怎么做">How I usually work</div>
-     <h2 data-en="Simple rules I keep coming back to." data-zh="我总会回到这些简单原则。">Simple rules I keep coming back to.</h2>
-   </div>
-   <div class="work-rows reveal">
-     <div class="work-row"><span class="num">01</span><h3 data-en="Start with the real problem" data-zh="先看真正的问题">Start with the real problem</h3><p data-en="Before adding features, I try to understand what someone actually needs to do." data-zh="在加功能之前，我会先理解用户真正需要完成什么。">Before adding features, I try to understand what someone actually needs to do.</p></div>
-     <div class="work-row"><span class="num">02</span><h3 data-en="Build a real version" data-zh="先做出能用的版本">Build a real version</h3><p data-en="A working version gives better feedback than a long list of assumptions." data-zh="一个能运行的版本，比一长串假设更容易得到真实反馈。">A working version gives better feedback than a long list of assumptions.</p></div>
-     <div class="work-row"><span class="num">03</span><h3 data-en="Keep it understandable" data-zh="保持可理解">Keep it understandable</h3><p data-en="I would rather have code and interfaces I can explain clearly than complexity for its own sake." data-zh="比起为了复杂而复杂，我更喜欢自己能清楚解释的代码和界面。">I would rather have code and interfaces I can explain clearly than complexity for its own sake.</p></div>
-     <div class="work-row"><span class="num">04</span><h3 data-en="Stay open to changing my mind" data-zh="愿意改变想法">Stay open to changing my mind</h3><p data-en="If testing shows the first idea was wrong, that is useful information, not a failure." data-zh="如果测试证明第一版想法不对，那也是有用的信息，不是失败。">If testing shows the first idea was wrong, that is useful information, not a failure.</p></div>
-   </div>
- </div>
-</section>
-
-<section class="section">
- <div class="container">
-   <div class="section-head reveal">
-     <div class="eyebrow" data-en="Outside the editor" data-zh="代码之外">Outside the editor</div>
-     <h2 data-en="A few parts of life that don’t fit in a project card." data-zh="有些生活，不适合塞进项目卡片里。">A few parts of life that don’t fit in a project card.</h2>
-   </div>
-   <div class="photo-grid reveal">
-     <figure><img src="foto3.png" alt="Graduation"></figure>
-     <figure><img src="foto4.png" alt="Life photo"></figure>
-     <figure><img src="foto5.png" alt="Life photo"></figure>
-   </div>
- </div>
-</section>
-
-<section class="section">
- <div class="container about-cta reveal">
-   <div>
-     <div class="eyebrow" data-en="Next" data-zh="下一页">Next</div>
-     <h2 data-en="The timeline makes more sense with the places." data-zh="把时间线和地点放在一起，会更完整。">The timeline makes more sense with the places.</h2>
-   </div>
-   <a class="button primary" href="journey.html"><span data-en="Open Journey" data-zh="查看经历">Open Journey</span><i class="fa-solid fa-arrow-right"></i></a>
- </div>
-</section>
-</main>
-
-<footer>
-  <div class="container footer-inner">
-    <span>© Timothy Nathaniel Laurencio</span>
-    <span data-en="Built slowly, edited often." data-zh="慢慢做，常常改。">Built slowly, edited often.</span>
-  </div>
-</footer>
-<div class="toast" id="toast"></div>
-
-<script>
-const THEME_KEY='portfolio-theme';
-const LANG_KEY='portfolio-language';
-const SOUND_KEY='portfolio-sound';
-
-function currentTheme(){return document.documentElement.dataset.theme||'dark'}
-function applyTheme(theme){
-  const t=theme==='light'?'light':'dark';
-  document.documentElement.dataset.theme=t;
-  document.body.classList.toggle('dark',t==='dark');
-  localStorage.setItem(THEME_KEY,t);
-  const meta=document.querySelector('meta[name="theme-color"]');
-  if(meta)meta.setAttribute('content',t==='dark'?'#000000':'#EDE3D3');
-  const icon=document.querySelector('#themeBtn i');
-  if(icon)icon.className=t==='dark'?'fa-regular fa-sun':'fa-regular fa-moon';
-}
-function toggleTheme(){applyTheme(currentTheme()==='dark'?'light':'dark')}
-
-let currentLanguage=localStorage.getItem(LANG_KEY)||'en';
-function applyLanguage(lang){
-  currentLanguage=lang==='zh'?'zh':'en';
-  localStorage.setItem(LANG_KEY,currentLanguage);
-  document.documentElement.lang=currentLanguage==='zh'?'zh-CN':'en';
-  document.querySelectorAll('[data-en][data-zh]').forEach(el=>{
-    el.textContent=el.dataset[currentLanguage];
-  });
-  const btn=document.getElementById('langBtn');
-  if(btn)btn.textContent=currentLanguage==='en'?'中文':'EN';
-}
-
-let soundOn=localStorage.getItem(SOUND_KEY)!=='off';
-function clickSound(freq=520){
-  if(!soundOn)return;
-  try{
-    const ctx=new (window.AudioContext||window.webkitAudioContext)();
-    const osc=ctx.createOscillator(),gain=ctx.createGain();
-    osc.frequency.value=freq;osc.type='sine';
-    gain.gain.setValueAtTime(.025,ctx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+.07);
-    osc.connect(gain);gain.connect(ctx.destination);osc.start();osc.stop(ctx.currentTime+.08);
-  }catch(e){}
-}
-function toggleSound(){
-  soundOn=!soundOn;
-  localStorage.setItem(SOUND_KEY,soundOn?'on':'off');
-  const i=document.querySelector('#soundBtn i');
-  if(i)i.className=soundOn?'fa-solid fa-volume-low':'fa-solid fa-volume-xmark';
-}
-
-function showToast(message){
-  const t=document.getElementById('toast');
-  if(!t)return;
-  t.textContent=message;t.classList.add('show');
-  clearTimeout(window.__toastTimer);
-  window.__toastTimer=setTimeout(()=>t.classList.remove('show'),1500);
-}
-
-document.addEventListener('DOMContentLoaded',()=>{
-  applyTheme(localStorage.getItem(THEME_KEY)||'dark');
-  applyLanguage(currentLanguage);
-  const si=document.querySelector('#soundBtn i');
-  if(si)si.className=soundOn?'fa-solid fa-volume-low':'fa-solid fa-volume-xmark';
-
-  document.getElementById('themeBtn')?.addEventListener('click',()=>{toggleTheme();clickSound(610)});
-  document.getElementById('soundBtn')?.addEventListener('click',toggleSound);
-  document.getElementById('langBtn')?.addEventListener('click',()=>applyLanguage(currentLanguage==='en'?'zh':'en'));
-  document.getElementById('mobileBtn')?.addEventListener('click',()=>{
-    document.getElementById('mobileMenu')?.classList.toggle('open');
-  });
-
-  const io=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
-  },{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-});
-</script>
-</body></html>
+  <footer class="about-footer"><div class="about-container"><span>© 2026 Timothy Nathaniel Laurencio</span><a href="#top" data-en="Back to top ↑" data-zh="返回顶部 ↑">Back to top ↑</a></div></footer>
+  <script defer src="project-filters.js?v=portfolio-19"></script>
+  <script defer src="project-constellation.js?v=portfolio-26"></script>
+</body>
+</html>

@@ -1,452 +1,168 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
 <head>
-<title>Journey | Timothy Nathaniel Laurencio</title>
-<meta name="description" content="Explore Timothy Nathaniel Laurencio's academic journey, experiences, places, and life in China.">
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#000000">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-<style>
-:root{
-  --bg:#000000;
-  --surface:#090909;
-  --surface-2:#111111;
-  --text:#F1EEE8;
-  --soft:#C3BDB4;
-  --muted:#8D867E;
-  --border:rgba(255,255,255,.10);
-  --accent:#A58D78;
-  --accent-2:#B5A07E;
-  --olive:#858778;
-  --header:rgba(0,0,0,.96);
-}
-
-html[data-theme="light"]{
-  --bg:#EDE3D3;
-  --surface:#F7F0E5;
-  --surface-2:#E9DECE;
-  --text:#241F1A;
-  --soft:#5F564D;
-  --muted:#756A60;
-  --border:rgba(36,31,26,.14);
-  --accent:#806A58;
-  --accent-2:#927B61;
-  --olive:#6F7565;
-  --header:rgba(237,227,211,.95);
-  color-scheme:light;
-}
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--bg)}
-body{
-  margin:0;
-  min-height:100vh;
-  background:var(--bg);
-  color:var(--text);
-  font-family:"Times New Roman",Times,serif;
-  transition:background .2s ease,color .2s ease;
-}
-a{color:inherit}
-button,input,textarea,select{font:inherit}
-img{max-width:100%;display:block}
-.container{width:min(1180px,calc(100% - 40px));margin:auto}
-header{
-  position:sticky;top:0;z-index:1000;
-  background:var(--header);
-  border-bottom:1px solid var(--border);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-}
-.nav{
-  min-height:68px;
-  display:flex;align-items:center;justify-content:space-between;gap:24px;
-}
-
-
-
-.nav-links{display:flex;align-items:center;gap:24px}
-.nav-links a{
-  position:relative;text-decoration:none;color:var(--soft);
-  font-size:.92rem;
-}
-.nav-links a:hover,.nav-links a.active{color:var(--text)}
-.nav-links a::after{
-  content:"";position:absolute;left:0;bottom:-8px;width:0;height:1px;
-  background:var(--accent);transition:width .18s ease;
-}
-.nav-links a:hover::after,.nav-links a.active::after{width:100%}
-.nav-tools{display:flex;align-items:center;gap:8px}
-.icon-btn{
-  width:38px;height:38px;border:1px solid var(--border);border-radius:50%;
-  background:transparent;color:var(--text);cursor:pointer;
-}
-.icon-btn:hover{border-color:color-mix(in srgb,var(--accent) 50%,var(--border))}
-.mobile-btn{display:none}
-.mobile-menu{display:none}
-main{overflow:hidden}
-.hero{
-  padding:110px 0 86px;
-  border-bottom:1px solid var(--border);
-}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:10px;
-  margin-bottom:24px;color:var(--accent);
-  font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
-}
-.eyebrow::before{content:"";width:28px;height:1px;background:var(--accent-2)}
-h1,h2,h3,p{margin-top:0}
-h1{
-  max-width:1000px;margin-bottom:26px;
-  font-size:clamp(3.3rem,7.3vw,7.4rem);
-  line-height:.92;letter-spacing:-.045em;font-weight:500;
-}
-h2{
-  font-size:clamp(2.25rem,4.2vw,4.35rem);
-  line-height:.98;letter-spacing:-.035em;font-weight:500;
-}
-p{color:var(--soft);line-height:1.72;font-size:1.03rem}
-.section{padding:96px 0;border-bottom:1px solid var(--border)}
-.section-head{
-  display:grid;grid-template-columns:.42fr 1fr;gap:50px;
-  align-items:start;margin-bottom:54px;
-}
-.section-copy{max-width:690px}
-.button{
-  min-height:44px;padding:0 18px;
-  display:inline-flex;align-items:center;justify-content:center;gap:9px;
-  border:1px solid var(--border);border-radius:999px;
-  text-decoration:none;transition:.18s ease;
-}
-.button.primary{background:var(--text);color:var(--bg);border-color:var(--text)}
-.button.secondary{background:transparent;color:var(--text)}
-.button:hover{transform:translateY(-1px)}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-.reveal.visible{opacity:1;transform:none}
-footer{padding:34px 0;color:var(--muted)}
-.footer-inner{display:flex;justify-content:space-between;gap:20px;font-size:.88rem}
-.toast{
-  position:fixed;right:18px;bottom:18px;z-index:5000;
-  padding:11px 14px;border:1px solid var(--border);
-  background:var(--surface);color:var(--text);border-radius:10px;
-  opacity:0;transform:translateY(8px);pointer-events:none;transition:.18s ease;
-}
-.toast.show{opacity:1;transform:none}
-@media(max-width:850px){
-  .nav-links{display:none}
-  .mobile-btn{display:inline-grid;place-items:center}
-  .mobile-menu{
-    padding:14px 20px 18px;border-top:1px solid var(--border);
-    background:var(--header)
-  }
-  .mobile-menu.open{display:grid;gap:14px}
-  .mobile-menu a{text-decoration:none;color:var(--soft)}
-  .section-head{grid-template-columns:1fr;gap:20px}
-}
-@media(max-width:600px){
-  .container{width:min(100% - 24px,1180px)}
-  .hero{padding:78px 0 62px}
-  .section{padding:70px 0}
-  h1{font-size:clamp(2.85rem,16vw,4.5rem)}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
-  .reveal{opacity:1;transform:none}
-}
-
-.journey-hero-grid{display:grid;grid-template-columns:1fr .82fr;gap:60px;align-items:center}
-.campus-card{position:relative}
-.campus-card img.hero-campus{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--border)}
-.school-badge{
-  position:absolute;left:18px;bottom:18px;right:18px;
-  display:flex;align-items:center;gap:12px;
-  padding:12px 14px;border:1px solid var(--border);
-  background:color-mix(in srgb,var(--surface) 90%,transparent);
-}
-.school-badge img{width:42px;height:42px;object-fit:contain}
-.school-badge strong{display:block;font-weight:500}
-.school-badge span{color:var(--muted);font-size:.84rem}
-.timeline{position:relative;margin-top:20px}
-.timeline::before{content:"";position:absolute;left:12px;top:10px;bottom:10px;width:1px;background:var(--border)}
-.timeline-item{position:relative;padding:0 0 52px 54px}
-.timeline-item:last-child{padding-bottom:0}
-.timeline-dot{
-  position:absolute;left:5px;top:8px;width:15px;height:15px;border-radius:50%;
-  border:1px solid var(--accent);background:var(--bg)
-}
-.timeline-year{color:var(--accent);font-size:.84rem;letter-spacing:.08em;text-transform:uppercase}
-.timeline-item h3{font-size:1.9rem;font-weight:500;margin:7px 0 10px}
-.places-head{display:grid;grid-template-columns:.55fr 1fr;gap:46px;align-items:start}
-.faith-note{
-  margin-top:24px;padding:18px 0;border-top:1px solid var(--border);
-  color:var(--soft);font-style:italic
-}
-.globe-wrap{
-  margin-top:38px;border:1px solid var(--border);background:var(--surface);
-  min-height:620px;overflow:hidden
-}
-.globe-wrap iframe{width:100%;height:620px;border:0;display:block}
-.journey-cta{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end}
-@media(max-width:850px){
- .journey-hero-grid,.places-head,.journey-cta{grid-template-columns:1fr}
- .globe-wrap,.globe-wrap iframe{min-height:720px;height:720px}
-}
-
-
-/* =====================================================================
-   FINAL SITE-WIDE THEME AUDIT
-   Dark = pure black / charcoal with no page-level glow.
-   Light = soft beige.
-   ===================================================================== */
-html[data-theme="dark"],
-html[data-theme="dark"] body{
-  --bg:#000000 !important;
-  --surface:#090909 !important;
-  --surface-2:#111111 !important;
-  --text:#F2EEE8 !important;
-  --soft:#C8C1B8 !important;
-  --muted:#918A82 !important;
-  --border:rgba(255,255,255,.10) !important;
-  --header:rgba(0,0,0,.97) !important;
-  background:#000000 !important;
-  color:#F2EEE8 !important;
-}
-
-html[data-theme="dark"] main,
-html[data-theme="dark"] .hero,
-html[data-theme="dark"] .section,
-html[data-theme="dark"] footer{
-  background:#000000 !important;
-}
-
-html[data-theme="dark"] header{
-  background:rgba(0,0,0,.97) !important;
-  box-shadow:none !important;
-}
-
-html[data-theme="dark"] .button,
-html[data-theme="dark"] .icon-btn{
-  box-shadow:none !important;
-}
-
-html[data-theme="light"],
-html[data-theme="light"] body{
-  --bg:#EDE3D3 !important;
-  --surface:#F7F0E5 !important;
-  --surface-2:#E9DECE !important;
-  --text:#241F1A !important;
-  --soft:#5F564D !important;
-  --muted:#756A60 !important;
-  --border:rgba(36,31,26,.14) !important;
-  --header:rgba(237,227,211,.96) !important;
-  background:#EDE3D3 !important;
-  color:#241F1A !important;
-}
-
-
-
-/* FINAL BLACK / BEIGE BLEND */
-html[data-theme="dark"],html[data-theme="dark"] body{
-  --bg:#000!important;--surface:#090909!important;--surface-2:#111!important;--text:#f2eee8!important;--soft:#c8c1b8!important;--muted:#918a82!important;--border:rgba(255,255,255,.10)!important;
-  background:#000!important;color:#f2eee8!important;
-}
-html[data-theme="light"],html[data-theme="light"] body{
-  --bg:#ede3d3!important;--surface:#f4ecdf!important;--surface-2:#e5d9c7!important;--text:#241f1a!important;--soft:#5f564d!important;--muted:#756a60!important;--border:rgba(36,31,26,.14)!important;
-  background:#ede3d3!important;color:#241f1a!important;
-}
-html[data-theme="dark"] main,html[data-theme="dark"] .hero,html[data-theme="dark"] .section,html[data-theme="dark"] footer{background:#000!important}
-html[data-theme="light"] main,html[data-theme="light"] .hero,html[data-theme="light"] .section,html[data-theme="light"] footer{background:#ede3d3!important}
-.section,.hero{box-shadow:none!important}
-
-
-
-html[data-theme="light"] .timeline-item,html[data-theme="light"] .timeline{background:transparent!important}
-html[data-theme="dark"] .timeline-item,html[data-theme="dark"] .timeline{background:transparent!important}
-html[data-theme="light"] .globe-wrap{background:#e6dac8!important;border-color:rgba(36,31,26,.12)!important}
-html[data-theme="dark"] .globe-wrap{background:#080808!important;border-color:rgba(255,255,255,.08)!important}
-
-</style>
-<link rel="stylesheet" href="site-brand.css">
-<link rel="stylesheet" href="site-header.css">
-<script src="site-header.js" defer></script>
-
-<link rel="canonical" href="https://timothy1016.github.io/TimothyNathanielLaurencio/journey.html">
-<link rel="icon" type="image/png" sizes="96x96" href="favicon.png">
-<meta property="og:title" content="Journey | Timothy Nathaniel Laurencio">
-<meta property="og:description" content="Explore Timothy Nathaniel Laurencio's academic journey, experiences, places, and life in China.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://timothy1016.github.io/TimothyNathanielLaurencio/journey.html">
+  <meta charset="utf-8"><script defer src="site-translations.js?v=portfolio-26"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11100e">
+  <title>Journey | Timothy Nathaniel Laurencio</title>
+  <meta name="description" content="The academic and personal journey of Timothy Nathaniel Laurencio — from teaching and community work to Computer Science, software engineering, and the next chapter in AI and research.">
+  <link rel="canonical" href="https://timothy1016.github.io/TimothyNathanielLaurencio/journey.html">
+  <meta property="og:title" content="Journey | Timothy Nathaniel Laurencio">
+  <meta property="og:description" content="A concise timeline of study, community, software engineering, and the experiences that shaped how Timothy works.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://timothy1016.github.io/TimothyNathanielLaurencio/journey.html">
+  <meta property="og:image" content="https://timothy1016.github.io/TimothyNathanielLaurencio/og-preview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.png" sizes="96x96" type="image/png"><link rel="icon" type="image/svg+xml" sizes="any" href="favicon-round.svg?v=portfolio-22">
+  <link rel="stylesheet" href="assets/icons.css?v=portfolio-19">
+  <link rel="stylesheet" href="site-brand.css?v=portfolio-19">
+  <link rel="stylesheet" href="site-header.css?v=portfolio-19">
+  <link rel="stylesheet" href="journey.css?v=portfolio-19">
+  <script defer src="site-header.js?v=portfolio-26"></script>
+  <script defer src="analytics.js"></script>
+<link rel="stylesheet" href="site-avatar.css?v=portfolio-29"/><script defer src="site-avatar.js?v=portfolio-29"></script><link rel="stylesheet" href="typography-times.css?v=portfolio-19"/>  <link rel="stylesheet" href="site-palette.css?v=portfolio-19">
+  <link rel="stylesheet" href="site-finish.css?v=portfolio-19">
+  <meta name="portfolio-build" content="v26">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Editorial black and cream portfolio preview featuring Timothy Nathaniel Laurencio and his portrait.">
+  <meta name="twitter:title" content="Journey | Timothy Nathaniel Laurencio">
+  <meta name="twitter:description" content="The academic and personal journey of Timothy Nathaniel Laurencio — from teaching and community work to Computer Science, software engineering, and the next chapter in AI and research.">
+  <meta name="twitter:image" content="https://timothy1016.github.io/TimothyNathanielLaurencio/og-preview.jpg">
+  <meta name="twitter:image:alt" content="Editorial black and cream portfolio preview featuring Timothy Nathaniel Laurencio and his portrait.">
+  <link rel="stylesheet" href="site-consistency.css?v=portfolio-19">
 </head>
-<body>
+<body id="top">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header id="site-header">
+  <div class="site-header-inner">
+    <div class="brand-cluster"><a class="brand" href="index.html#home" aria-label="Timothy Nathaniel Laurencio — Home">
+      <img src="logo-256.webp" width="76" height="76" alt="Timothy Nathaniel Laurencio logo">
+    </a><div class="brand-socials" role="group" aria-label="Social links">
+        <a class="brand-social-link" data-social="email" href="mailto:timothynathaniellaurencio@gmail.com" aria-label="Email Timothy" title="Email"><i class="fa-regular fa-envelope" aria-hidden="true"></i></a>
+        <a class="brand-social-link" data-social="linkedin" href="https://www.linkedin.com/in/timothy-nathaniel-laurencio-727005413" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+        <a class="brand-social-link" data-social="github" href="https://github.com/Timothy1016" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+        <a class="brand-social-link" data-social="instagram" href="https://www.instagram.com/timothynathaniellaurencio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="igHeaderGradient" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#feda75"/><stop offset="42%" stop-color="#fa7e1e"/><stop offset="68%" stop-color="#d62976"/><stop offset="100%" stop-color="#4f5bd5"/></linearGradient></defs><rect fill="none" height="17" rx="5" stroke="url(#igHeaderGradient)" stroke-width="2" width="17" x="3.5" y="3.5"/><circle cx="12" cy="12" fill="none" r="4" stroke="url(#igHeaderGradient)" stroke-width="2"/><circle cx="17.4" cy="6.8" fill="url(#igHeaderGradient)" r="1.15"/></svg></a>
+        <a class="brand-social-link" data-social="whatsapp" href="https://wa.me/6285286289012" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+      </div></div>
+    <nav class="nav-links" id="site-primary-nav" aria-label="Primary navigation"><a href="about.html" data-en="About" data-zh="关于我">About</a><a href="blog.html" data-en="Blog" data-zh="博客">Blog</a><a href="contact.html" data-en="Connect" data-zh="联系">Connect</a><a href="resume.html" data-en="CV" data-zh="简历">CV</a></nav>
+    <div class="site-header-tools">
+      <button id="site-menu-toggle" type="button" aria-label="Open menu" aria-controls="site-primary-nav" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</header>
 
-<header id="site-header"><div class="site-header-inner">
-<a class="brand" href="index.html#home" aria-label="Timothy Nathaniel Laurencio — Home"><img src="logo.png" alt="Timothy Nathaniel Laurencio logo" width="76" height="76"></a>
-<nav id="site-primary-nav" class="nav-links" aria-label="Primary navigation">
-<a href="index.html#work">Work</a>
-<a href="about.html">About</a>
-<a href="index.html#skills">Skills</a>
-<a class="active" aria-current="page" href="journey.html">Journey</a>
-<a href="contact.html">Contact</a>
-</nav>
-<div class="site-header-tools">
-<button aria-label="Toggle sound" class="icon-btn" id="soundBtn" type="button"><i class="fa-solid fa-volume-low"></i></button>
-<button aria-label="Toggle theme" class="icon-btn" id="themeBtn" type="button"><i class="fa-regular fa-sun"></i></button>
-<button aria-label="Toggle language" class="icon-btn site-language" id="langBtn" type="button">中文</button>
-<button id="site-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-primary-nav"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
-</div></div></header>
+<main id="main-content">
+  <section class="journey-hero">
+    <div class="journey-container journey-hero-grid">
+      <div class="journey-hero-copy">
+        <div class="journey-kicker" data-en="Journey · 2017 — Now" data-zh="经历 · 2017 — 至今">Journey · 2017 — Now</div>
+        <h1 data-en="A path shaped by study, community, and building." data-zh="一条由学习、社群与实践塑造的道路。">A path shaped by study, community, and building.</h1>
+        <p data-en="I do not think of my journey as a list of places or milestones. The useful part is how each chapter changed the way I learn, explain ideas, work with people, and build software." data-zh="我并不把自己的经历看成地点或里程碑的清单。真正重要的是，每一个阶段都改变了我学习、表达、协作和构建软件的方式。">I do not think of my journey as a list of places or milestones. The useful part is how each chapter changed the way I learn, explain ideas, work with people, and build software.</p>
+        <div class="journey-actions">
+          <a class="journey-button primary" href="#chapters" data-en="Explore the timeline ↓" data-zh="查看时间线 ↓">Explore the timeline ↓</a>
+          <a class="journey-button" href="resume.html" data-en="View resume ↗" data-zh="查看简历 ↗">View resume ↗</a>
+        </div>
+      </div>
+      <aside class="journey-summary" aria-label="Journey summary">
+        <div class="summary-label" data-en="Current direction" data-zh="当前方向">Current direction</div>
+        <div class="summary-row"><span data-en="Base" data-zh="所在地">Base</span><strong data-en="Nanjing, China" data-zh="中国 · 南京">Nanjing, China</strong></div>
+        <div class="summary-row"><span data-en="Field" data-zh="领域">Field</span><strong data-en="Computer Science" data-zh="计算机科学">Computer Science</strong></div>
+        <div class="summary-row"><span data-en="Focus" data-zh="重点">Focus</span><strong data-en="Software · AI · Research" data-zh="软件 · AI · 研究">Software · AI · Research</strong></div>
+        <div class="summary-row"><span data-en="Next" data-zh="下一步">Next</span><strong data-en="Graduate study & deeper research" data-zh="研究生学习与深入研究">Graduate study & deeper research</strong></div>
+      </aside>
+    </div>
+  </section>
 
-<main>
-<section class="hero">
- <div class="container journey-hero-grid">
-   <div class="reveal">
-     <div class="eyebrow" data-en="Journey" data-zh="经历">Journey</div>
-     <h1 data-en="Some chapters were planned. Most made sense later." data-zh="有些章节是计划好的，更多的是后来才明白它们的意义。">Some chapters were planned. Most made sense later.</h1>
-     <p class="section-copy" data-en="University, tutoring, community, moving to China, faith, and travel never felt like separate stories to me. They all changed how I think about work and people." data-zh="大学、辅导、社群、来到中国、信仰和旅行，对我来说从来不是彼此分开的故事。它们一起改变了我对工作和人的理解。">University, tutoring, community, moving to China, faith, and travel never felt like separate stories to me. They all changed how I think about work and people.</p>
-   </div>
-   <div class="campus-card reveal">
-     <img class="hero-campus" src="bg-photo.jpeg" alt="Nanjing Tech University">
-     <div class="school-badge">
-       <img src="logo-njtech.png" alt="NJTech">
-       <div><strong>Nanjing Tech University</strong><span>Nanjing · 2022 — 2026</span></div>
-     </div>
-   </div>
- </div>
-</section>
+  <nav class="journey-index" aria-label="Journey sections">
+    <div class="journey-container journey-index-inner">
+      <a href="#chapters"><span>01</span><strong data-en="Chapters" data-zh="阶段">Chapters</strong></a>
+      <a href="#growth"><span>02</span><strong data-en="What changed" data-zh="成长">What changed</strong></a>
+      <a href="#anchors"><span>03</span><strong data-en="Anchors" data-zh="重要地点">Anchors</strong></a>
+      <a href="#next"><span>04</span><strong data-en="Next chapter" data-zh="下一章">Next chapter</strong></a>
+    </div>
+  </nav>
 
-<section class="section">
- <div class="container">
-   <div class="section-head reveal">
-     <div class="eyebrow" data-en="Timeline" data-zh="时间线">Timeline</div>
-     <h2 data-en="A few chapters that changed how I work." data-zh="一些改变了我做事方式的阶段。">A few chapters that changed how I work.</h2>
-   </div>
-   <div class="timeline reveal">
-     <article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-year">2022 — 2026</div><h3>Nanjing Tech University</h3><p data-en="Computer Science, software projects, coursework, debugging, and learning how much I still wanted to understand." data-zh="计算机科学、软件项目、课程、调试，以及越来越清楚自己还有很多想学的东西。">Computer Science, software projects, coursework, debugging, and learning how much I still wanted to understand.</p></article>
-     <article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-year">2022 — 2023</div><h3>PPIT Nanjing</h3><p data-en="Community work taught me that organizing people is often harder than organizing code — and just as useful." data-zh="社群工作让我发现，协调人有时比协调代码更难，但同样重要。">Community work taught me that organizing people is often harder than organizing code — and just as useful.</p></article>
-     <article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-year">2017 — 2020</div><h3 data-en="Private Tutor" data-zh="私人辅导">Private Tutor</h3><p data-en="Teaching forced me to explain things clearly. That habit still helps whenever I write, debug, or work with someone else." data-zh="教学逼着我把事情讲清楚。这个习惯到现在仍然帮助我写东西、调试和与人协作。">Teaching forced me to explain things clearly. That habit still helps whenever I write, debug, or work with someone else.</p></article>
-   </div>
- </div>
-</section>
+  <section class="journey-section" id="chapters">
+    <div class="journey-container">
+      <div class="journey-section-head">
+        <div><div class="journey-kicker" data-en="01 · Chapters" data-zh="01 · 阶段">01 · Chapters</div></div>
+        <div><h2 data-en="The timeline, without the noise." data-zh="去掉多余装饰，只留下真正重要的时间线。">The timeline, without the noise.</h2><p data-en="A few chapters that meaningfully changed what I know, how I communicate, and what I want to build next." data-zh="这些阶段真正改变了我的知识、沟通方式，以及我下一步想构建的东西。">A few chapters that meaningfully changed what I know, how I communicate, and what I want to build next.</p></div>
+      </div>
 
-<section class="section" id="places">
- <div class="container">
-   <div class="places-head reveal">
-     <div>
-       <div class="eyebrow" data-en="Places" data-zh="地点">Places</div>
-       <div class="faith-note">“I can do all things through Christ who strengthens me.”<br><span>Philippians 4:13</span></div>
-     </div>
-     <div>
-       <h2 data-en="The timeline says what happened. The map reminds me where." data-zh="时间线告诉我发生了什么，地图提醒我那些事情发生在哪里。">The timeline says what happened. The map reminds me where.</h2>
-       <p data-en="Some places were home for years. Others were only a few days. I kept them together because each one left a different kind of memory." data-zh="有些地方住了很多年，有些只是短短几天。我把它们放在一起，因为每个地方都留下了不同的记忆。">Some places were home for years. Others were only a few days. I kept them together because each one left a different kind of memory.</p>
-     </div>
-   </div>
-   <div class="globe-wrap reveal"><iframe id="journeyGlobe" src="globe.html" title="Journey globe"></iframe></div>
- </div>
-</section>
+      <div class="chapter-list">
+        <article class="chapter">
+          <div class="chapter-time"><span>2017 — 2020</span><small>01</small></div>
+          <div class="chapter-body"><div class="chapter-type" data-en="Teaching" data-zh="教学">Teaching</div><h3 data-en="Private tutoring taught me to explain before I impress." data-zh="私人辅导让我学会：先把事情讲清楚，再谈展示自己。">Private tutoring taught me to explain before I impress.</h3><p data-en="Teaching made clarity a habit. Breaking a difficult idea into smaller parts later became useful in debugging, documentation, presentations, and teamwork." data-zh="教学让我养成了把复杂问题讲清楚的习惯。后来无论是调试、写文档、做展示还是团队协作，这个习惯都很有用。">Teaching made clarity a habit. Breaking a difficult idea into smaller parts later became useful in debugging, documentation, presentations, and teamwork.</p><div class="chapter-tags"><span data-en="Communication" data-zh="沟通">Communication</span><span data-en="Patience" data-zh="耐心">Patience</span><span data-en="Clarity" data-zh="清晰表达">Clarity</span></div></div>
+        </article>
 
-<section class="section">
- <div class="container journey-cta reveal">
-   <div><div class="eyebrow" data-en="Next chapter" data-zh="下一章">Next chapter</div><h2 data-en="Still building the next version." data-zh="下一版，还在继续做。">Still building the next version.</h2></div>
-   <a class="button primary" href="contact.html"><span data-en="Send me a message" data-zh="给我留言">Send me a message</span></a>
- </div>
-</section>
+        <article class="chapter">
+          <div class="chapter-time"><span>2018 — 2021</span><small>02</small></div>
+          <div class="chapter-body"><div class="chapter-type" data-en="Foundation" data-zh="基础阶段">Foundation</div><h3 data-en="Science gave me the habit of asking how things work." data-zh="理科学习让我习惯追问：事情究竟是怎么运作的？">Science gave me the habit of asking how things work.</h3><p data-en="My high-school years were less about choosing one technology and more about developing curiosity, structured problem solving, and the confidence to keep learning unfamiliar things." data-zh="高中阶段并不是为了尽早选择某项技术，而是培养好奇心、结构化解决问题的能力，以及面对陌生事物继续学习的信心。">My high-school years were less about choosing one technology and more about developing curiosity, structured problem solving, and the confidence to keep learning unfamiliar things.</p><div class="chapter-tags"><span>Santo Ignasius</span><span data-en="Natural Science" data-zh="自然科学">Natural Science</span></div></div>
+        </article>
+
+        <article class="chapter featured">
+          <div class="chapter-time"><span>2022 — 2026</span><small>03</small></div>
+          <div class="chapter-body"><div class="chapter-type" data-en="University" data-zh="大学">University</div><h3 data-en="Nanjing turned Computer Science from a subject into a craft." data-zh="在南京，计算机科学从一门专业逐渐变成了我真正投入的实践。">Nanjing turned Computer Science from a subject into a craft.</h3><p data-en="At Nanjing Tech University, coursework became projects, projects became systems, and debugging became part of how I learn. Moving abroad also forced me to become more independent and adaptable." data-zh="在南京工业大学，课程逐渐变成项目，项目逐渐变成系统，而调试也成为了我学习的一部分。独自在海外生活，也让我变得更独立、更能适应变化。">At Nanjing Tech University, coursework became projects, projects became systems, and debugging became part of how I learn. Moving abroad also forced me to become more independent and adaptable.</p><div class="chapter-tags"><span>Nanjing Tech University</span><span data-en="Computer Science & Technology" data-zh="计算机科学与技术">Computer Science & Technology</span><span data-en="Software projects" data-zh="软件项目">Software projects</span></div><a class="chapter-link" href="about.html#projects" data-en="See selected work ↗" data-zh="查看精选项目 ↗">See selected work ↗</a></div>
+        </article>
+
+        <article class="chapter">
+          <div class="chapter-time"><span>2022 — 2023</span><small>04</small></div>
+          <div class="chapter-body"><div class="chapter-type" data-en="Community" data-zh="社群">Community</div><h3 data-en="Community work made the human side of technical work harder to ignore." data-zh="社群工作让我更清楚地看到技术工作背后的人。">Community work made the human side of technical work harder to ignore.</h3><p data-en="Working with PPIT Nanjing meant coordinating people, communication, media, and expectations. It reinforced something I still value: good work is rarely only about the technical solution." data-zh="参与 PPIT Nanjing 的经历涉及人员协调、沟通、媒体和预期管理。它让我更加确定：好的工作很少只取决于技术方案本身。">Working with PPIT Nanjing meant coordinating people, communication, media, and expectations. It reinforced something I still value: good work is rarely only about the technical solution.</p><div class="chapter-tags"><span>PPIT Nanjing</span><span data-en="Community" data-zh="社群">Community</span><span data-en="Multimedia" data-zh="多媒体">Multimedia</span></div></div>
+        </article>
+
+        <article class="chapter">
+          <div class="chapter-time"><span>2025 — 2026</span><small>05</small></div>
+          <div class="chapter-body"><div class="chapter-type" data-en="Building" data-zh="实践">Building</div><h3 data-en="Projects became the fastest way to turn gaps in knowledge into something concrete." data-zh="项目成为了我把知识盲点转化为实际成果最快的方式。">Projects became the fastest way to turn gaps in knowledge into something concrete.</h3><p data-en="Compilers, dashboards, web applications, research work, and small experiments taught me to stop waiting until I knew everything. Build, test, understand the mistake, and improve." data-zh="编译器、仪表盘、Web 应用、研究工作和各种小实验，让我不再等待“全部学会”以后才开始。先做、再测试、理解错误，然后继续改进。">Compilers, dashboards, web applications, research work, and small experiments taught me to stop waiting until I knew everything. Build, test, understand the mistake, and improve.</p><div class="chapter-tags"><span data-en="Full stack" data-zh="全栈">Full stack</span><span data-en="Research" data-zh="研究">Research</span><span data-en="Iteration" data-zh="迭代">Iteration</span></div></div>
+        </article>
+
+        <article class="chapter current">
+          <div class="chapter-time"><span>2026 — Now</span><small>06</small></div>
+          <div class="chapter-body"><div class="chapter-type" data-en="Direction" data-zh="方向">Direction</div><h3 data-en="The next chapter is about going deeper, not simply adding more." data-zh="下一阶段不是简单地做更多，而是把重要的方向做得更深。">The next chapter is about going deeper, not simply adding more.</h3><p data-en="I am focusing on stronger software engineering fundamentals, practical AI, research, and the preparation needed for graduate study. The goal is to connect building with deeper technical understanding." data-zh="我正在把重心放在更扎实的软件工程基础、实用 AI、研究，以及研究生阶段所需要的准备上。目标是把“能做出来”与更深入的技术理解连接起来。">I am focusing on stronger software engineering fundamentals, practical AI, research, and the preparation needed for graduate study. The goal is to connect building with deeper technical understanding.</p><div class="chapter-tags"><span>AI</span><span data-en="Software Engineering" data-zh="软件工程">Software Engineering</span><span data-en="Graduate Study" data-zh="研究生学习">Graduate Study</span></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="journey-section growth-section" id="growth">
+    <div class="journey-container">
+      <div class="journey-section-head compact">
+        <div><div class="journey-kicker" data-en="02 · What changed" data-zh="02 · 成长">02 · What changed</div></div>
+        <div><h2 data-en="The useful part was not the timeline. It was the change." data-zh="真正有价值的不是时间线，而是这些经历带来的改变。">The useful part was not the timeline. It was the change.</h2></div>
+      </div>
+      <div class="growth-grid">
+        <article><span>01</span><h3 data-en="Explain clearly" data-zh="清楚表达">Explain clearly</h3><p data-en="Teaching and teamwork made clarity more valuable to me than sounding complicated." data-zh="教学与团队合作让我越来越重视清晰，而不是把事情说得复杂。">Teaching and teamwork made clarity more valuable to me than sounding complicated.</p></article>
+        <article><span>02</span><h3 data-en="Adapt quickly" data-zh="快速适应">Adapt quickly</h3><p data-en="Living and studying abroad taught me to work through unfamiliar systems without waiting for perfect conditions." data-zh="海外学习和生活让我学会在不熟悉的环境里继续推进，而不是等待完美条件。">Living and studying abroad taught me to work through unfamiliar systems without waiting for perfect conditions.</p></article>
+        <article><span>03</span><h3 data-en="Own the outcome" data-zh="对结果负责">Own the outcome</h3><p data-en="Projects taught me that finishing, testing, and maintaining something matters as much as the first idea." data-zh="项目让我明白，完成、测试和维护一个东西，与最初的想法同样重要。">Projects taught me that finishing, testing, and maintaining something matters as much as the first idea.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="journey-section anchors-section" id="anchors">
+    <div class="journey-container">
+      <div class="journey-section-head compact">
+        <div><div class="journey-kicker" data-en="03 · Anchors" data-zh="03 · 重要地点">03 · Anchors</div></div>
+        <div><h2 data-en="Two places explain more of the story than a map ever could." data-zh="比起一张地图，两个地点更能说明这段经历。">Two places explain more of the story than a map ever could.</h2></div>
+      </div>
+      <div class="anchor-grid">
+        <article class="anchor-card"><div class="anchor-code">ID · HOME</div><h3>Singkawang</h3><p data-en="The starting point — family, familiarity, and the place that gave every later move a reference point." data-zh="故事的起点——家人、熟悉感，以及后来每一次出发都可以回望的地方。">The starting point — family, familiarity, and the place that gave every later move a reference point.</p></article>
+        <article class="anchor-card"><div class="anchor-code">CN · GROWTH</div><h3>Nanjing</h3><p data-en="The place where university, independence, friendships, community, and software engineering became part of the same chapter." data-zh="大学、独立生活、朋友、社群和软件工程在这里汇成了同一个阶段。">The place where university, independence, friendships, community, and software engineering became part of the same chapter.</p></article>
+      </div>
+      <p class="anchor-note" data-en="Travel still matters to me, but I would rather keep this page about growth than turn it into a gallery." data-zh="旅行对我仍然重要，但这个页面更应该记录成长，而不是变成一个照片画廊。">Travel still matters to me, but I would rather keep this page about growth than turn it into a gallery.</p>
+    </div>
+  </section>
+
+  <section class="journey-next" id="next">
+    <div class="journey-container journey-next-grid">
+      <div><div class="journey-kicker" data-en="04 · Next chapter" data-zh="04 · 下一章">04 · Next chapter</div><h2 data-en="Still learning. Building with more intention." data-zh="继续学习，也更有目的地构建。">Still learning. Building with more intention.</h2></div>
+      <div><p data-en="I am interested in software engineering, AI, graduate research, and opportunities where I can keep building while learning from stronger people and harder problems." data-zh="我关注软件工程、AI、研究生阶段的研究，以及那些能让我一边实践、一边向更优秀的人和更困难的问题学习的机会。">I am interested in software engineering, AI, graduate research, and opportunities where I can keep building while learning from stronger people and harder problems.</p><div class="journey-actions"><a class="journey-button primary" href="contact.html" data-en="Start a conversation ↗" data-zh="开始交流 ↗">Start a conversation ↗</a><a class="journey-button" href="about.html#projects" data-en="View selected work" data-zh="查看精选项目">View selected work</a></div></div>
+    </div>
+  </section>
 </main>
 
-<footer>
-  <div class="container footer-inner">
-    <span>© Timothy Nathaniel Laurencio</span>
-    <span data-en="Built slowly, edited often." data-zh="慢慢做，常常改。">Built slowly, edited often.</span>
-  </div>
+<footer class="journey-footer">
+  <div class="journey-container journey-footer-inner"><span>© 2026 Timothy Nathaniel Laurencio. All rights reserved.</span><a href="#top" data-en="Back to top ↑" data-zh="返回顶部 ↑">Back to top ↑</a></div>
 </footer>
-<div class="toast" id="toast"></div>
-
-<script>
-
-const THEME_KEY='portfolio-theme';
-const LANG_KEY='portfolio-language';
-const SOUND_KEY='portfolio-sound';
-
-function currentTheme(){return document.documentElement.dataset.theme||'dark'}
-function applyTheme(theme){
-  const t=theme==='light'?'light':'dark';
-  document.documentElement.dataset.theme=t;
-  document.body.classList.toggle('dark',t==='dark');
-  localStorage.setItem(THEME_KEY,t);
-  const meta=document.querySelector('meta[name="theme-color"]');
-  if(meta)meta.setAttribute('content',t==='dark'?'#000000':'#EDE3D3');
-  const icon=document.querySelector('#themeBtn i');
-  if(icon)icon.className=t==='dark'?'fa-regular fa-sun':'fa-regular fa-moon';
-}
-function toggleTheme(){applyTheme(currentTheme()==='dark'?'light':'dark')}
-
-let currentLanguage=localStorage.getItem(LANG_KEY)||'en';
-function applyLanguage(lang){
-  currentLanguage=lang==='zh'?'zh':'en';
-  localStorage.setItem(LANG_KEY,currentLanguage);
-  document.documentElement.lang=currentLanguage==='zh'?'zh-CN':'en';
-  document.querySelectorAll('[data-en][data-zh]').forEach(el=>{
-    el.textContent=el.dataset[currentLanguage];
-  });
-  const btn=document.getElementById('langBtn');
-  if(btn)btn.textContent=currentLanguage==='en'?'中文':'EN';
-}
-
-let soundOn=localStorage.getItem(SOUND_KEY)!=='off';
-function clickSound(freq=520){
-  if(!soundOn)return;
-  try{
-    const ctx=new (window.AudioContext||window.webkitAudioContext)();
-    const osc=ctx.createOscillator(),gain=ctx.createGain();
-    osc.frequency.value=freq;osc.type='sine';
-    gain.gain.setValueAtTime(.025,ctx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+.07);
-    osc.connect(gain);gain.connect(ctx.destination);osc.start();osc.stop(ctx.currentTime+.08);
-  }catch(e){}
-}
-function toggleSound(){
-  soundOn=!soundOn;
-  localStorage.setItem(SOUND_KEY,soundOn?'on':'off');
-  const i=document.querySelector('#soundBtn i');
-  if(i)i.className=soundOn?'fa-solid fa-volume-low':'fa-solid fa-volume-xmark';
-}
-
-function showToast(message){
-  const t=document.getElementById('toast');
-  if(!t)return;
-  t.textContent=message;t.classList.add('show');
-  clearTimeout(window.__toastTimer);
-  window.__toastTimer=setTimeout(()=>t.classList.remove('show'),1500);
-}
-
-document.addEventListener('DOMContentLoaded',()=>{
-  applyTheme(localStorage.getItem(THEME_KEY)||'dark');
-  applyLanguage(currentLanguage);
-  const si=document.querySelector('#soundBtn i');
-  if(si)si.className=soundOn?'fa-solid fa-volume-low':'fa-solid fa-volume-xmark';
-
-  document.getElementById('themeBtn')?.addEventListener('click',()=>{toggleTheme();clickSound(610)});
-  document.getElementById('soundBtn')?.addEventListener('click',toggleSound);
-  document.getElementById('langBtn')?.addEventListener('click',()=>applyLanguage(currentLanguage==='en'?'zh':'en'));
-  document.getElementById('mobileBtn')?.addEventListener('click',()=>{
-    document.getElementById('mobileMenu')?.classList.toggle('open');
-  });
-
-  const io=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
-  },{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-});
-
-const originalApplyTheme=applyTheme;
-applyTheme=function(theme){
-  originalApplyTheme(theme);
-  const frame=document.getElementById('journeyGlobe');
-  if(frame?.contentWindow)frame.contentWindow.postMessage({type:'tnl-theme',theme:currentTheme()},'*');
-}
-window.addEventListener('load',()=>{
-  const frame=document.getElementById('journeyGlobe');
-  frame?.addEventListener('load',()=>frame.contentWindow.postMessage({type:'tnl-theme',theme:currentTheme()},'*'));
-});
-</script>
-</body></html>
+</body>
+</html>

@@ -1,0 +1,238 @@
+/* TNL Navigator — a compact, contextual portfolio guide. */
+#tnl-guide{
+  --guide-bg:#11151b;
+  --guide-bg-2:#171c24;
+  --guide-text:#f7f8fa;
+  --guide-muted:#9aa2af;
+  --guide-line:#2a303a;
+  --guide-accent:#5b7cff;
+  position:fixed;
+  right:max(18px,env(safe-area-inset-right));
+  bottom:max(18px,env(safe-area-inset-bottom));
+  z-index:9800;
+  font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+html[data-theme="light"] #tnl-guide,
+body:not(.dark) #tnl-guide[data-theme-source="body"]{
+  --guide-bg:#f7f8fa;
+  --guide-bg-2:#eef1f5;
+  --guide-text:#111318;
+  --guide-muted:#687080;
+  --guide-line:#d9dee7;
+  --guide-accent:#3157d9;
+}
+body.dark #tnl-guide[data-theme-source="body"]{
+  --guide-bg:#11151b;
+  --guide-bg-2:#171c24;
+  --guide-text:#f7f8fa;
+  --guide-muted:#9aa2af;
+  --guide-line:#2a303a;
+  --guide-accent:#5b7cff;
+}
+.tnl-guide-avatar{
+  position:relative;
+  width:58px;
+  height:58px;
+  display:grid;
+  place-items:center;
+  margin-left:auto;
+  padding:0;
+  border:1px solid var(--guide-line);
+  border-radius:50%;
+  background:var(--guide-bg);
+  color:var(--guide-text);
+  box-shadow:0 14px 38px rgba(0,0,0,.20);
+  cursor:pointer;
+  transition:transform .18s ease,border-color .18s ease,background .18s ease;
+}
+.tnl-guide-avatar:hover{transform:translateY(-2px);border-color:var(--guide-accent)}
+.tnl-guide-avatar:active{transform:translateY(0) scale(.97)}
+.tnl-guide-avatar:focus-visible{outline:2px solid var(--guide-accent);outline-offset:4px}
+.tnl-guide-avatar svg{width:31px;height:31px;display:block;overflow:visible}
+.tnl-guide-avatar .rocket-body{fill:#c6cbd4;stroke:#7f8794;stroke-width:1.2}
+.tnl-guide-avatar .rocket-window{fill:var(--guide-accent)}
+.tnl-guide-avatar .rocket-detail{fill:#8e96a3}
+.tnl-guide-avatar .rocket-lines{stroke:var(--guide-muted);stroke-width:1.4;stroke-linecap:round;opacity:.65;transition:opacity .18s ease,transform .18s ease}
+#tnl-guide.is-open .tnl-guide-avatar{border-color:var(--guide-accent);background:var(--guide-bg-2)}
+#tnl-guide.is-open .rocket-lines{opacity:1;transform:translate(-1px,1px)}
+.tnl-guide-avatar::after{
+  content:attr(data-label);
+  position:absolute;
+  right:68px;
+  top:50%;
+  transform:translateY(-50%) translateX(5px);
+  padding:7px 9px;
+  border:1px solid var(--guide-line);
+  border-radius:8px;
+  background:var(--guide-bg);
+  color:var(--guide-muted);
+  font-size:.72rem;
+  white-space:nowrap;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:.16s ease;
+}
+.tnl-guide-avatar:hover::after,.tnl-guide-avatar:focus-visible::after{opacity:1;visibility:visible;transform:translateY(-50%) translateX(0)}
+.tnl-guide-panel{
+  position:absolute;
+  right:0;
+  bottom:72px;
+  width:min(370px,calc(100vw - 32px));
+  max-height:min(620px,calc(100vh - 110px));
+  overflow:auto;
+  border:1px solid var(--guide-line);
+  border-radius:16px;
+  background:var(--guide-bg);
+  color:var(--guide-text);
+  box-shadow:0 24px 70px rgba(0,0,0,.28);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(9px) scale(.985);
+  transform-origin:bottom right;
+  transition:opacity .18s ease,transform .18s ease,visibility .18s ease;
+}
+#tnl-guide.is-open .tnl-guide-panel{opacity:1;visibility:visible;transform:none}
+.tnl-guide-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:20px 20px 16px;border-bottom:1px solid var(--guide-line)}
+.tnl-guide-kicker{display:block;margin-bottom:5px;color:var(--guide-accent);font:600 .69rem/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.07em;text-transform:uppercase}
+.tnl-guide-head strong{display:block;font-size:1rem;font-weight:650;letter-spacing:-.01em}
+.tnl-guide-close{width:32px;height:32px;display:grid;place-items:center;flex:0 0 32px;border:1px solid var(--guide-line);border-radius:50%;background:transparent;color:var(--guide-muted);font-size:1.1rem;cursor:pointer}
+.tnl-guide-close:hover{color:var(--guide-text);border-color:var(--guide-accent)}
+.tnl-guide-body{padding:18px 20px 20px}
+.tnl-guide-response{min-height:78px;margin:0;padding:0 0 16px;color:var(--guide-muted);font-size:.91rem;line-height:1.62}
+.tnl-guide-response strong{color:var(--guide-text);font-weight:600}
+.tnl-guide-questions{display:grid;gap:8px;padding-top:15px;border-top:1px solid var(--guide-line)}
+.tnl-guide-question{
+  width:100%;
+  padding:11px 12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  border:1px solid var(--guide-line);
+  border-radius:10px;
+  background:transparent;
+  color:var(--guide-text);
+  text-align:left;
+  cursor:pointer;
+  font-size:.82rem;
+  transition:background .15s ease,border-color .15s ease;
+}
+.tnl-guide-question:hover{background:var(--guide-bg-2);border-color:color-mix(in srgb,var(--guide-accent) 55%,var(--guide-line))}
+.tnl-guide-question span:last-child{color:var(--guide-muted)}
+.tnl-guide-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tnl-guide-link{min-height:38px;display:inline-flex;align-items:center;padding:0 12px;border:1px solid var(--guide-line);border-radius:9px;color:var(--guide-text);text-decoration:none;font-size:.78rem;font-weight:600}
+.tnl-guide-link.primary{border-color:var(--guide-accent);background:var(--guide-accent);color:#fff}
+.tnl-guide-link:hover{transform:translateY(-1px)}
+.tnl-guide-note{margin:14px 0 0;color:var(--guide-muted);font-size:.67rem;line-height:1.5}
+@media(max-width:560px){
+  #tnl-guide{right:12px;bottom:max(12px,env(safe-area-inset-bottom))}
+  .tnl-guide-avatar{width:52px;height:52px}
+  .tnl-guide-avatar svg{width:28px;height:28px}
+  .tnl-guide-avatar::after{display:none}
+  .tnl-guide-panel{right:0;bottom:64px;width:calc(100vw - 24px);max-height:calc(100vh - 92px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .tnl-guide-avatar,.tnl-guide-panel,.tnl-guide-link,.rocket-lines{transition:none!important}
+}
+
+
+/* V5.2 — make the Rocket Avatar unmistakably visible without changing its palette. */
+#tnl-guide{font-family:"Times New Roman",Times,serif}
+.tnl-guide-avatar{
+  width:72px;
+  height:72px;
+  border-radius:20px;
+}
+.tnl-guide-avatar svg{width:42px;height:42px}
+.tnl-guide-avatar::after{
+  right:84px;
+  opacity:1;
+  visibility:visible;
+  transform:translateY(-50%) translateX(0);
+  font-family:"Times New Roman",Times,serif;
+  font-size:.82rem;
+  font-weight:600;
+}
+.tnl-guide-panel{bottom:86px}
+.tnl-guide-kicker{font-family:"Times New Roman",Times,serif}
+@media(max-width:560px){
+  .tnl-guide-avatar{width:60px;height:60px;border-radius:18px}
+  .tnl-guide-avatar svg{width:36px;height:36px}
+  .tnl-guide-panel{bottom:72px}
+}
+
+
+/* Warm neutral navigator theme for both modes. */
+#tnl-guide{--guide-bg:#191714;--guide-bg-2:#211e19;--guide-text:#f2eadc;--guide-muted:#aa9c89;--guide-line:rgba(221,205,182,.18);--guide-accent:#c5a982}
+html[data-theme="dark"] #tnl-guide,body.dark #tnl-guide[data-theme-source="body"]{--guide-bg:#191714;--guide-bg-2:#211e19;--guide-text:#f2eadc;--guide-muted:#aa9c89;--guide-line:rgba(221,205,182,.18);--guide-accent:#c5a982}
+html[data-theme="light"] #tnl-guide,body:not(.dark) #tnl-guide[data-theme-source="body"]{--guide-bg:#f8f3e9;--guide-bg-2:#e8ddcc;--guide-text:#211b15;--guide-muted:#6f6252;--guide-line:rgba(48,38,27,.16);--guide-accent:#745b3b}
+.tnl-guide-avatar .rocket-body{fill:#d7c4a5;stroke:#a78e69}.tnl-guide-avatar .rocket-detail{fill:#a78e69}
+
+/* V28 — a cleaner, balanced rocket silhouette with a warm enamel finish. */
+#tnl-guide{
+  --rocket-outline:#72583b;
+  --rocket-fin:#c5a273;
+  --rocket-engine:#896746;
+  --rocket-window-rim:#bd925b;
+  --rocket-window:#385863;
+  --rocket-star:#d8bd8e;
+}
+.tnl-guide-avatar{
+  overflow:visible;
+  isolation:isolate;
+  background:radial-gradient(circle at 36% 27%,color-mix(in srgb,var(--guide-accent) 19%,var(--guide-bg)),var(--guide-bg) 72%);
+  box-shadow:0 14px 38px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,248,231,.07);
+}
+.tnl-guide-avatar svg{
+  position:relative;
+  z-index:1;
+  width:50px;
+  height:50px;
+  overflow:visible;
+  filter:drop-shadow(0 2px 2px rgba(12,9,6,.22));
+}
+.tnl-guide-avatar .rocket-stars{fill:var(--rocket-star);opacity:.9}
+.tnl-guide-avatar .rocket-flame{fill:url(#tnl-rocket-flame-gradient)}
+.tnl-guide-avatar .rocket-flame-core{fill:#fff0cf;opacity:.96}
+.tnl-guide-avatar .rocket-thrust{transform-box:view-box;transform-origin:32px 44px;transition:transform .24s ease}
+.tnl-guide-avatar .rocket-art{
+  transform-box:view-box;
+  transform-origin:center;
+  transition:transform .36s cubic-bezier(.2,.8,.2,1);
+}
+.tnl-guide-avatar .rocket-fin{fill:var(--rocket-fin);stroke:var(--rocket-outline);stroke-width:.9;stroke-linejoin:round}
+.tnl-guide-avatar .rocket-engine{fill:var(--rocket-engine);stroke:var(--rocket-outline);stroke-width:.8;stroke-linejoin:round}
+.tnl-guide-avatar .rocket-body{fill:url(#tnl-rocket-shell-gradient);stroke:var(--rocket-outline);stroke-width:1.15;stroke-linejoin:round}
+.tnl-guide-avatar .rocket-highlight{fill:#fffaf0;opacity:.38}
+.tnl-guide-avatar .rocket-seam{fill:none;stroke:#a9885d;stroke-width:1;stroke-linecap:round;opacity:.82}
+.tnl-guide-avatar .rocket-window-rim{fill:var(--rocket-window-rim);stroke:var(--rocket-outline);stroke-width:.8}
+.tnl-guide-avatar .rocket-window{fill:var(--rocket-window);stroke:#fff0d4;stroke-width:.7}
+.tnl-guide-avatar .rocket-window-glint{fill:none;stroke:#fff8e9;stroke-width:1;stroke-linecap:round}
+.tnl-guide-avatar:hover .rocket-art,.tnl-guide-avatar:focus-visible .rocket-art{transform:translate(1.2px,-1.2px) rotate(1.5deg)}
+.tnl-guide-avatar:hover .rocket-thrust,.tnl-guide-avatar:focus-visible .rocket-thrust{transform:scale(1.1)}
+#tnl-guide.is-open .tnl-guide-avatar .rocket-art{transform:translate(1px,-1px)}
+@media(max-width:560px){.tnl-guide-avatar svg{width:43px;height:43px}}
+@media(prefers-reduced-motion:reduce){
+  .tnl-guide-avatar .rocket-art,.tnl-guide-avatar .rocket-thrust{transition:none!important}
+  .tnl-guide-avatar:hover .rocket-art,.tnl-guide-avatar:focus-visible .rocket-art,#tnl-guide.is-open .tnl-guide-avatar .rocket-art{transform:none}
+  .tnl-guide-avatar:hover .rocket-thrust,.tnl-guide-avatar:focus-visible .rocket-thrust{transform:none}
+}
+
+/* V29 — staggered star twinkles keep the navigator subtly alive. */
+.tnl-guide-avatar .rocket-star{transform-box:fill-box;transform-origin:center}
+.tnl-guide-avatar .rocket-star-primary{animation:rocket-star-twinkle 3.2s ease-in-out infinite}
+.tnl-guide-avatar .rocket-star-secondary{animation:rocket-star-twinkle 3.8s 1.05s ease-in-out infinite}
+.tnl-guide-avatar .rocket-star-dot{animation:rocket-star-glint 2.7s 1.45s ease-in-out infinite}
+.tnl-guide-avatar:hover .rocket-star,.tnl-guide-avatar:focus-visible .rocket-star{filter:drop-shadow(0 0 1.5px rgba(242,215,168,.72))}
+@keyframes rocket-star-twinkle{
+  0%,100%{opacity:.48;transform:scale(.84) rotate(0deg)}
+  46%,56%{opacity:1;transform:scale(1.12) rotate(45deg)}
+}
+@keyframes rocket-star-glint{
+  0%,100%{opacity:.35;transform:scale(.8)}
+  50%{opacity:1;transform:scale(1.35)}
+}
+@media(prefers-reduced-motion:reduce){
+  .tnl-guide-avatar .rocket-star{animation:none!important;transform:none!important;filter:none!important;opacity:.9}
+}

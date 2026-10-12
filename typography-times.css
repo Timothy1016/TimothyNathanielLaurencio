@@ -1,0 +1,5 @@
+/* V5.2 typography lock — user requested Times New Roman everywhere.
+   Intentionally contains no color declarations. */
+html,body,body *,button,input,textarea,select,option,code,pre,kbd,samp{
+  font-family:"Times New Roman",Times,serif!important;
+}
