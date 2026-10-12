@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://timothy1016.github.io/TimothyNathanielLaurencio/</loc>
-  </url>
-
-  <url>
-    <loc>https://timothy1016.github.io/TimothyNathanielLaurencio/about.html</loc>
-  </url>
-
-  <url>
-    <loc>https://timothy1016.github.io/TimothyNathanielLaurencio/contact.html</loc>
-  </url>
-
-  <url>
-    <loc>https://timothy1016.github.io/TimothyNathanielLaurencio/journey.html</loc>
-  </url>
-
-  <url>
-    <loc>https://timothy1016.github.io/TimothyNathanielLaurencio/globe.html</loc>
-  </url>
-
+  <url><loc>https://timothy1016.github.io/TimothyNathanielLaurencio/</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://timothy1016.github.io/TimothyNathanielLaurencio/about.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://timothy1016.github.io/TimothyNathanielLaurencio/blog.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://timothy1016.github.io/TimothyNathanielLaurencio/journey.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://timothy1016.github.io/TimothyNathanielLaurencio/research.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://timothy1016.github.io/TimothyNathanielLaurencio/services.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://timothy1016.github.io/TimothyNathanielLaurencio/contact.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://timothy1016.github.io/TimothyNathanielLaurencio/resume.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://timothy1016.github.io/TimothyNathanielLaurencio/project-equipmenthub.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://timothy1016.github.io/TimothyNathanielLaurencio/project-learning-chinese.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://timothy1016.github.io/TimothyNathanielLaurencio/project-box-emotions.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://timothy1016.github.io/TimothyNathanielLaurencio/project-compiler.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://timothy1016.github.io/TimothyNathanielLaurencio/project-coffee.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://timothy1016.github.io/TimothyNathanielLaurencio/project-inventory.html</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://timothy1016.github.io/TimothyNathanielLaurencio/project-lab.html</loc><lastmod>2026-10-08</lastmod></url>
 </urlset>

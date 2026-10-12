@@ -1,401 +1,221 @@
-<!doctype html>
-<html lang="en" data-theme="dark">
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
 <head>
 <title>Contact | Timothy Nathaniel Laurencio</title>
-<meta name="description" content="Contact Timothy Nathaniel Laurencio for software engineering, collaboration, graduate study, research, and technology opportunities.">
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#000000">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-<style>
-:root{
-  --bg:#000000;
-  --surface:#090909;
-  --surface-2:#111111;
-  --text:#F1EEE8;
-  --soft:#C3BDB4;
-  --muted:#8D867E;
-  --border:rgba(255,255,255,.10);
-  --accent:#A58D78;
-  --accent-2:#B5A07E;
-  --olive:#858778;
-  --header:rgba(0,0,0,.96);
-}
-
-html[data-theme="light"]{
-  --bg:#EDE3D3;
-  --surface:#F7F0E5;
-  --surface-2:#E9DECE;
-  --text:#241F1A;
-  --soft:#5F564D;
-  --muted:#756A60;
-  --border:rgba(36,31,26,.14);
-  --accent:#806A58;
-  --accent-2:#927B61;
-  --olive:#6F7565;
-  --header:rgba(237,227,211,.95);
-  color-scheme:light;
-}
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--bg)}
-body{
-  margin:0;
-  min-height:100vh;
-  background:var(--bg);
-  color:var(--text);
-  font-family:"Times New Roman",Times,serif;
-  transition:background .2s ease,color .2s ease;
-}
-a{color:inherit}
-button,input,textarea,select{font:inherit}
-img{max-width:100%;display:block}
-.container{width:min(1180px,calc(100% - 40px));margin:auto}
-header{
-  position:sticky;top:0;z-index:1000;
-  background:var(--header);
-  border-bottom:1px solid var(--border);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-}
-.nav{
-  min-height:68px;
-  display:flex;align-items:center;justify-content:space-between;gap:24px;
-}
-
-
-
-.nav-links{display:flex;align-items:center;gap:24px}
-.nav-links a{
-  position:relative;text-decoration:none;color:var(--soft);
-  font-size:.92rem;
-}
-.nav-links a:hover,.nav-links a.active{color:var(--text)}
-.nav-links a::after{
-  content:"";position:absolute;left:0;bottom:-8px;width:0;height:1px;
-  background:var(--accent);transition:width .18s ease;
-}
-.nav-links a:hover::after,.nav-links a.active::after{width:100%}
-.nav-tools{display:flex;align-items:center;gap:8px}
-.icon-btn{
-  width:38px;height:38px;border:1px solid var(--border);border-radius:50%;
-  background:transparent;color:var(--text);cursor:pointer;
-}
-.icon-btn:hover{border-color:color-mix(in srgb,var(--accent) 50%,var(--border))}
-.mobile-btn{display:none}
-.mobile-menu{display:none}
-main{overflow:hidden}
-.hero{
-  padding:110px 0 86px;
-  border-bottom:1px solid var(--border);
-}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:10px;
-  margin-bottom:24px;color:var(--accent);
-  font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
-}
-.eyebrow::before{content:"";width:28px;height:1px;background:var(--accent-2)}
-h1,h2,h3,p{margin-top:0}
-h1{
-  max-width:1000px;margin-bottom:26px;
-  font-size:clamp(3.3rem,7.3vw,7.4rem);
-  line-height:.92;letter-spacing:-.045em;font-weight:500;
-}
-h2{
-  font-size:clamp(2.25rem,4.2vw,4.35rem);
-  line-height:.98;letter-spacing:-.035em;font-weight:500;
-}
-p{color:var(--soft);line-height:1.72;font-size:1.03rem}
-.section{padding:96px 0;border-bottom:1px solid var(--border)}
-.section-head{
-  display:grid;grid-template-columns:.42fr 1fr;gap:50px;
-  align-items:start;margin-bottom:54px;
-}
-.section-copy{max-width:690px}
-.button{
-  min-height:44px;padding:0 18px;
-  display:inline-flex;align-items:center;justify-content:center;gap:9px;
-  border:1px solid var(--border);border-radius:999px;
-  text-decoration:none;transition:.18s ease;
-}
-.button.primary{background:var(--text);color:var(--bg);border-color:var(--text)}
-.button.secondary{background:transparent;color:var(--text)}
-.button:hover{transform:translateY(-1px)}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-.reveal.visible{opacity:1;transform:none}
-footer{padding:34px 0;color:var(--muted)}
-.footer-inner{display:flex;justify-content:space-between;gap:20px;font-size:.88rem}
-.toast{
-  position:fixed;right:18px;bottom:18px;z-index:5000;
-  padding:11px 14px;border:1px solid var(--border);
-  background:var(--surface);color:var(--text);border-radius:10px;
-  opacity:0;transform:translateY(8px);pointer-events:none;transition:.18s ease;
-}
-.toast.show{opacity:1;transform:none}
-@media(max-width:850px){
-  .nav-links{display:none}
-  .mobile-btn{display:inline-grid;place-items:center}
-  .mobile-menu{
-    padding:14px 20px 18px;border-top:1px solid var(--border);
-    background:var(--header)
-  }
-  .mobile-menu.open{display:grid;gap:14px}
-  .mobile-menu a{text-decoration:none;color:var(--soft)}
-  .section-head{grid-template-columns:1fr;gap:20px}
-}
-@media(max-width:600px){
-  .container{width:min(100% - 24px,1180px)}
-  .hero{padding:78px 0 62px}
-  .section{padding:70px 0}
-  h1{font-size:clamp(2.85rem,16vw,4.5rem)}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
-  .reveal{opacity:1;transform:none}
-}
-
-.contact-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.6fr);gap:60px;align-items:end}
-.contact-hero h1{font-size:clamp(3rem,6vw,5.7rem)}
-.profile{
-  display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:center;
-  padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)
-}
-.avatar{position:relative;width:150px;height:150px}
-.avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;border:1px solid var(--border)}
-.online{position:absolute;right:9px;bottom:10px;width:17px;height:17px;border-radius:50%;background:#39C56A;border:3px solid var(--bg)}
-.profile strong{font-size:1.2rem;font-weight:500}
-.profile p{margin:5px 0 0;font-size:.92rem}
-.contact-list{border-top:1px solid var(--border)}
-.contact-row{
-  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center;
-  border-bottom:1px solid var(--border)
-}
-.contact-main{
-  min-width:0;display:grid;grid-template-columns:44px .55fr 1fr;gap:18px;align-items:center;
-  padding:19px 0;text-decoration:none;color:inherit;transition:padding-left .18s ease
-}
-.contact-main:hover{padding-left:7px}
-.contact-icon{
-  width:40px;height:40px;display:grid;place-items:center;border-radius:50%;
-  border:1px solid var(--border);background:var(--surface)
-}
-.contact-row:nth-child(1) .contact-icon{color:#25D366;border-color:rgba(37,211,102,.28);background:rgba(37,211,102,.05)}
-.contact-row:nth-child(2) .contact-icon i{
-  background:linear-gradient(135deg,#405DE6,#833AB4,#C13584,#E1306C,#FD1D1D,#FCAF45);
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent
-}
-.contact-row:nth-child(3) .contact-icon{color:#EA4335;border-color:rgba(234,67,53,.25)}
-.contact-row:nth-child(4) .contact-icon{color:#0A66C2;border-color:rgba(10,102,194,.26)}
-.contact-row:nth-child(5) .contact-icon{color:var(--text)}
-.contact-main .desc{color:var(--soft);opacity:0;transform:translateY(6px);animation:descIn .48s ease forwards}
-.contact-row:nth-child(2) .desc{animation-delay:.05s}
-.contact-row:nth-child(3) .desc{animation-delay:.1s}
-.contact-row:nth-child(4) .desc{animation-delay:.15s}
-.contact-row:nth-child(5) .desc{animation-delay:.2s}
-.contact-row:hover .desc{transform:translateX(4px)}
-@keyframes descIn{to{opacity:1;transform:none}}
-.copy-btn{
-  min-width:94px;height:38px;padding:0 13px;
-  display:flex;align-items:center;justify-content:center;gap:7px;
-  border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);cursor:pointer
-}
-.copy-btn:hover{border-color:var(--accent);color:var(--accent)}
-.copy-btn.copied{border-color:var(--olive);color:var(--olive)}
-.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.field{display:grid;gap:7px}
-.field.full{grid-column:1/-1}
-.field label{color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.08em}
-.field input,.field textarea,.field select{
-  width:100%;border:1px solid var(--border);background:var(--surface);color:var(--text);
-  padding:13px 14px;border-radius:10px;outline:none
-}
-.field textarea{min-height:160px;resize:vertical}
-.form-actions{grid-column:1/-1;display:flex;justify-content:flex-end}
-@media(max-width:850px){
- .contact-hero-grid{grid-template-columns:1fr}
- .profile{max-width:620px}
-}
-@media(max-width:650px){
- .profile{grid-template-columns:96px 1fr}.avatar{width:96px;height:96px}
- .contact-main{grid-template-columns:40px 1fr;gap:8px 13px}
- .contact-main .desc{grid-column:2}
- .copy-btn{width:42px;min-width:42px;padding:0}.copy-btn span{display:none}
- .contact-form{grid-template-columns:1fr}.field.full,.form-actions{grid-column:1}
-}
-
-
-/* =====================================================================
-   FINAL SITE-WIDE THEME AUDIT
-   Dark = pure black / charcoal with no page-level glow.
-   Light = soft beige.
-   ===================================================================== */
-html[data-theme="dark"],
-html[data-theme="dark"] body{
-  --bg:#000000 !important;
-  --surface:#090909 !important;
-  --surface-2:#111111 !important;
-  --text:#F2EEE8 !important;
-  --soft:#C8C1B8 !important;
-  --muted:#918A82 !important;
-  --border:rgba(255,255,255,.10) !important;
-  --header:rgba(0,0,0,.97) !important;
-  background:#000000 !important;
-  color:#F2EEE8 !important;
-}
-
-html[data-theme="dark"] main,
-html[data-theme="dark"] .hero,
-html[data-theme="dark"] .section,
-html[data-theme="dark"] footer{
-  background:#000000 !important;
-}
-
-html[data-theme="dark"] header{
-  background:rgba(0,0,0,.97) !important;
-  box-shadow:none !important;
-}
-
-html[data-theme="dark"] .button,
-html[data-theme="dark"] .icon-btn{
-  box-shadow:none !important;
-}
-
-html[data-theme="light"],
-html[data-theme="light"] body{
-  --bg:#EDE3D3 !important;
-  --surface:#F7F0E5 !important;
-  --surface-2:#E9DECE !important;
-  --text:#241F1A !important;
-  --soft:#5F564D !important;
-  --muted:#756A60 !important;
-  --border:rgba(36,31,26,.14) !important;
-  --header:rgba(237,227,211,.96) !important;
-  background:#EDE3D3 !important;
-  color:#241F1A !important;
-}
-
-
-
-/* FINAL BLACK / BEIGE BLEND */
-html[data-theme="dark"],html[data-theme="dark"] body{
-  --bg:#000!important;--surface:#090909!important;--surface-2:#111!important;--text:#f2eee8!important;--soft:#c8c1b8!important;--muted:#918a82!important;--border:rgba(255,255,255,.10)!important;
-  background:#000!important;color:#f2eee8!important;
-}
-html[data-theme="light"],html[data-theme="light"] body{
-  --bg:#ede3d3!important;--surface:#f4ecdf!important;--surface-2:#e5d9c7!important;--text:#241f1a!important;--soft:#5f564d!important;--muted:#756a60!important;--border:rgba(36,31,26,.14)!important;
-  background:#ede3d3!important;color:#241f1a!important;
-}
-html[data-theme="dark"] main,html[data-theme="dark"] .hero,html[data-theme="dark"] .section,html[data-theme="dark"] footer{background:#000!important}
-html[data-theme="light"] main,html[data-theme="light"] .hero,html[data-theme="light"] .section,html[data-theme="light"] footer{background:#ede3d3!important}
-.section,.hero{box-shadow:none!important}
-
-
-
-html[data-theme="light"] .profile,html[data-theme="light"] .contact-list,html[data-theme="light"] .contact-row{background:transparent!important}
-html[data-theme="dark"] .profile,html[data-theme="dark"] .contact-list,html[data-theme="dark"] .contact-row{background:transparent!important}
-html[data-theme="light"] .copy-btn,html[data-theme="light"] .field input,html[data-theme="light"] .field textarea,html[data-theme="light"] .field select{background:#e8dccb!important;color:#241f1a!important}
-html[data-theme="dark"] .copy-btn,html[data-theme="dark"] .field input,html[data-theme="dark"] .field textarea,html[data-theme="dark"] .field select{background:#0d0d0d!important;color:#f2eee8!important}
-
-</style>
-<link rel="stylesheet" href="site-brand.css">
-<link rel="stylesheet" href="site-header.css">
-<script src="site-header.js" defer></script>
-
-<link rel="canonical" href="https://timothy1016.github.io/TimothyNathanielLaurencio/contact.html">
-<link rel="icon" type="image/png" sizes="96x96" href="favicon.png">
-<meta property="og:title" content="Contact | Timothy Nathaniel Laurencio">
-<meta property="og:description" content="Contact Timothy Nathaniel Laurencio for software engineering, collaboration, graduate study, research, and technology opportunities.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://timothy1016.github.io/TimothyNathanielLaurencio/contact.html">
+<meta content="Contact Timothy Nathaniel Laurencio for software engineering, collaboration, graduate study, research, and technology opportunities." name="description"/>
+<meta charset="utf-8"/><script defer src="site-translations.js?v=portfolio-26"></script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#10100e" name="theme-color"/>
+<link href="assets/icons.css?v=portfolio-19" rel="stylesheet"/>
+<link href="contact.css?v=portfolio-19" rel="stylesheet"/>
+<link href="favicon.png" rel="icon" sizes="96x96" type="image/png"/><link rel="icon" type="image/svg+xml" sizes="any" href="favicon-round.svg?v=portfolio-22">
+<link href="https://timothy1016.github.io/TimothyNathanielLaurencio/contact.html" rel="canonical"/>
+<meta content="Contact | Timothy Nathaniel Laurencio" property="og:title"/>
+<meta content="Contact Timothy Nathaniel Laurencio for software engineering, collaboration, graduate study, research, and technology opportunities." property="og:description"/>
+<meta content="website" property="og:type"/><meta content="https://timothy1016.github.io/TimothyNathanielLaurencio/og-preview.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://timothy1016.github.io/TimothyNathanielLaurencio/contact.html" property="og:url"/>
+<link href="site-brand.css?v=portfolio-19" rel="stylesheet"/>
+<link href="site-header.css?v=portfolio-19" rel="stylesheet"/>
+<link href="contact-premium.css?v=portfolio-19" rel="stylesheet"/>
+<link href="contact-polish.css?v=portfolio-19" rel="stylesheet"/>
+<script defer="" src="site-header.js?v=portfolio-26"></script>
+<script defer="" src="analytics.js"></script>
+<link rel="stylesheet" href="site-avatar.css?v=portfolio-29"/><script defer src="site-avatar.js?v=portfolio-29"></script><link rel="stylesheet" href="typography-times.css?v=portfolio-19"/>  <link rel="stylesheet" href="site-palette.css?v=portfolio-19">
+  <link rel="stylesheet" href="site-finish.css?v=portfolio-19">
+<link rel="stylesheet" href="connect-polish.css?v=portfolio-19"/>
+<link rel="stylesheet" href="contact-brief.css?v=portfolio-19"/>
+<link rel="stylesheet" href="cv-preview.css?v=portfolio-19"/>
+<script defer src="cv-preview.js?v=portfolio-19"></script>
+  <meta name="portfolio-build" content="v26">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Editorial black and cream portfolio preview featuring Timothy Nathaniel Laurencio and his portrait.">
+  <meta name="twitter:title" content="Contact | Timothy Nathaniel Laurencio">
+  <meta name="twitter:description" content="Contact Timothy Nathaniel Laurencio for software engineering, collaboration, graduate study, research, and technology opportunities.">
+  <meta name="twitter:image" content="https://timothy1016.github.io/TimothyNathanielLaurencio/og-preview.jpg">
+  <meta name="twitter:image:alt" content="Editorial black and cream portfolio preview featuring Timothy Nathaniel Laurencio and his portrait.">
+  <link rel="stylesheet" href="site-consistency.css?v=portfolio-19">
 </head>
-<body>
-
+<body id="top"><a class="skip-link" href="#main-content">Skip to content</a>
 <header id="site-header"><div class="site-header-inner">
-<a class="brand" href="index.html#home" aria-label="Timothy Nathaniel Laurencio — Home"><img src="logo.png" alt="Timothy Nathaniel Laurencio logo" width="76" height="76"></a>
-<nav id="site-primary-nav" class="nav-links" aria-label="Primary navigation">
-<a href="index.html#work">Work</a>
-<a href="about.html">About</a>
-<a href="index.html#skills">Skills</a>
-<a href="journey.html">Journey</a>
-<a class="active" aria-current="page" href="contact.html">Contact</a>
-</nav>
+<div class="brand-cluster"><a aria-label="Timothy Nathaniel Laurencio — Home" class="brand" href="index.html#home"><img alt="Timothy Nathaniel Laurencio logo" height="76" src="logo-256.webp" width="76"/></a><div class="brand-socials" role="group" aria-label="Social links">
+        <a class="brand-social-link" data-social="email" href="mailto:timothynathaniellaurencio@gmail.com" aria-label="Email Timothy" title="Email"><i class="fa-regular fa-envelope" aria-hidden="true"></i></a>
+        <a class="brand-social-link" data-social="linkedin" href="https://www.linkedin.com/in/timothy-nathaniel-laurencio-727005413" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+        <a class="brand-social-link" data-social="github" href="https://github.com/Timothy1016" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+        <a class="brand-social-link" data-social="instagram" href="https://www.instagram.com/timothynathaniellaurencio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="igHeaderGradient" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#feda75"/><stop offset="42%" stop-color="#fa7e1e"/><stop offset="68%" stop-color="#d62976"/><stop offset="100%" stop-color="#4f5bd5"/></linearGradient></defs><rect fill="none" height="17" rx="5" stroke="url(#igHeaderGradient)" stroke-width="2" width="17" x="3.5" y="3.5"/><circle cx="12" cy="12" fill="none" r="4" stroke="url(#igHeaderGradient)" stroke-width="2"/><circle cx="17.4" cy="6.8" fill="url(#igHeaderGradient)" r="1.15"/></svg></a>
+        <a class="brand-social-link" data-social="whatsapp" href="https://wa.me/6285286289012" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+      </div></div>
+<nav class="nav-links" id="site-primary-nav" aria-label="Primary navigation"><a href="about.html" data-en="About" data-zh="关于我">About</a><a href="blog.html" data-en="Blog" data-zh="博客">Blog</a><a class="active" href="contact.html" data-en="Connect" data-zh="联系">Connect</a><a href="resume.html" data-en="CV" data-zh="简历">CV</a></nav>
 <div class="site-header-tools">
-<button aria-label="Toggle sound" class="icon-btn" id="soundBtn" type="button"><i class="fa-solid fa-volume-low"></i></button>
 <button aria-label="Toggle theme" class="icon-btn" id="themeBtn" type="button"><i class="fa-regular fa-sun"></i></button>
 <button aria-label="Toggle language" class="icon-btn site-language" id="langBtn" type="button">中文</button>
-<button id="site-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-primary-nav"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+<button aria-controls="site-primary-nav" aria-expanded="false" aria-label="Open menu" id="site-menu-toggle" type="button"><i aria-hidden="true" class="fa-solid fa-bars"></i></button>
 </div></div></header>
-
-<main>
-<section class="hero contact-hero">
- <div class="container contact-hero-grid">
-   <div class="reveal">
-     <div class="eyebrow" data-en="Contact" data-zh="联系">Contact</div>
-     <h1 data-en="Send me a message." data-zh="给我发个消息。">Send me a message.</h1>
-     <p class="section-copy" data-en="You don’t need a polished pitch. If you want to ask about a project, work, graduate study, or just trade ideas, send it over." data-zh="你不需要准备一段很正式的话。无论是项目、工作、研究生申请，还是只是想交流想法，都可以直接联系我。">You don’t need a polished pitch. If you want to ask about a project, work, graduate study, or just trade ideas, send it over.</p>
-   </div>
-   <div class="profile reveal">
-     <div class="avatar"><img src="Profile Github.png" alt="Timothy profile"><span class="online"></span></div>
-     <div><strong>Timothy Nathaniel Laurencio</strong><p data-en="Usually easiest to reach by WhatsApp or email." data-zh="通常通过 WhatsApp 或邮件最容易联系到我。">Usually easiest to reach by WhatsApp or email.</p></div>
-   </div>
- </div>
+<main id="main-content">
+<section class="hero contact-hero contact-profile-hero">
+<div class="container">
+<div class="profile profile-hero-card reveal">
+<div class="avatar avatar-hero">
+<img alt="Timothy Nathaniel Laurencio" decoding="async" fetchpriority="high" height="1073" sizes="(max-width: 760px) 42vw, 260px" src="profile-github-720.webp" srcset="profile-github-480.webp 480w, profile-github-720.webp 720w, profile-github.webp 874w" width="720"/>
+</div>
+<div class="profile-hero-copy">
+<div class="eyebrow" data-en="Contact" data-zh="联系">Contact</div>
+<h1 class="profile-hero-name">Timothy Nathaniel Laurencio</h1>
+<div aria-label="Academic credential" class="profile-credential">
+<span class="credential-dot"></span>
+<span class="credential-main" data-en="B.Eng. in Computer Science and Technology" data-zh="计算机科学与技术 工学学士">
+           B.Eng. in Computer Science and Technology
+         </span>
+<span class="credential-separator">·</span>
+<span class="credential-place" data-en="Nanjing, China" data-zh="中国 · 南京">
+           Nanjing, China
+         </span>
+</div>
+<p data-en="Software Engineer and Computer Science graduate from Nanjing Tech University. Usually easiest to reach by WhatsApp or email." data-zh="软件工程师，毕业于南京工业大学计算机科学与技术专业。通常通过 WhatsApp 或电子邮件最容易联系到我。">Software Engineer and Computer Science graduate from Nanjing Tech University. Usually easiest to reach by WhatsApp or email.</p>
+</div>
+</div>
+</div>
 </section>
-
 <section class="section" style="padding-top:26px">
- <div class="container contact-list reveal">
-   <div class="contact-row">
-     <a class="contact-main" href="https://wa.me/6285286289012" target="_blank" rel="noopener"><span class="contact-icon"><i class="fa-brands fa-whatsapp"></i></span><strong>WhatsApp</strong><span class="desc" data-en="Open a WhatsApp chat" data-zh="打开 WhatsApp 聊天">Open a WhatsApp chat</span></a>
-     <button class="copy-btn" type="button" data-copy="+6285286289012" data-type="phone"><i class="fa-regular fa-copy"></i><span data-en="Copy" data-zh="复制">Copy</span></button>
-   </div>
-   <div class="contact-row">
-     <a class="contact-main" href="https://www.instagram.com/timothynathaniellaurencio/" target="_blank" rel="noopener"><span class="contact-icon"><i class="fa-brands fa-instagram"></i></span><strong>Instagram</strong><span class="desc" data-en="Photos, travel, and everyday life" data-zh="照片、旅行和日常生活">Photos, travel, and everyday life</span></a>
-     <button class="copy-btn" type="button" data-copy="https://www.instagram.com/timothynathaniellaurencio/" data-type="link"><i class="fa-regular fa-copy"></i><span data-en="Copy" data-zh="复制">Copy</span></button>
-   </div>
-   <div class="contact-row">
-     <a class="contact-main" href="mailto:timothynathaniellaurencio@gmail.com"><span class="contact-icon"><i class="fa-regular fa-envelope"></i></span><strong>Email</strong><span class="desc" data-en="Send me an email" data-zh="给我发邮件">Send me an email</span></a>
-     <button class="copy-btn" type="button" data-copy="timothynathaniellaurencio@gmail.com" data-type="email"><i class="fa-regular fa-copy"></i><span data-en="Copy" data-zh="复制">Copy</span></button>
-   </div>
-   <div class="contact-row">
-     <a class="contact-main" href="https://www.linkedin.com/in/timothy-nathaniel-laurencio-727005413" target="_blank" rel="noopener"><span class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></span><strong>LinkedIn</strong><span class="desc" data-en="Work and professional updates" data-zh="工作与职业动态">Work and professional updates</span></a>
-     <button class="copy-btn" type="button" data-copy="https://www.linkedin.com/in/timothy-nathaniel-laurencio-727005413" data-type="link"><i class="fa-regular fa-copy"></i><span data-en="Copy" data-zh="复制">Copy</span></button>
-   </div>
-   <div class="contact-row">
-     <a class="contact-main" href="https://github.com/Timothy1016" target="_blank" rel="noopener"><span class="contact-icon"><i class="fa-brands fa-github"></i></span><strong>GitHub</strong><span class="desc" data-en="Code, projects, and experiments" data-zh="代码、项目和实验">Code, projects, and experiments</span></a>
-     <button class="copy-btn" type="button" data-copy="https://github.com/Timothy1016" data-type="link"><i class="fa-regular fa-copy"></i><span data-en="Copy" data-zh="复制">Copy</span></button>
-   </div>
- </div>
+<div class="container contact-list reveal">
+<div class="contact-row" data-brand="whatsapp">
+<a class="contact-main" data-track="WhatsApp Click" data-track-label="Contact" href="https://wa.me/6285286289012" rel="noopener noreferrer" target="_blank"><span class="contact-icon"><i class="fa-brands fa-whatsapp"></i></span><strong>WhatsApp</strong><span class="desc" data-en="Open a WhatsApp chat" data-zh="打开 WhatsApp 聊天">Open a WhatsApp chat</span></a>
+<button class="copy-btn" data-copy="+6285286289012" data-type="phone" type="button"><i class="fa-regular fa-copy"></i><span data-en="Copy" data-zh="复制">Copy</span></button>
+</div>
+<div class="contact-row" data-brand="instagram">
+<a class="contact-main" href="https://www.instagram.com/timothynathaniellaurencio/" rel="noopener noreferrer" target="_blank"><span class="contact-icon"><svg class="instagram-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="igConnectGradient" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#feda75"/><stop offset="42%" stop-color="#fa7e1e"/><stop offset="68%" stop-color="#d62976"/><stop offset="100%" stop-color="#4f5bd5"/></linearGradient></defs><rect fill="none" height="17" rx="5" stroke="url(#igConnectGradient)" stroke-width="2" width="17" x="3.5" y="3.5"/><circle cx="12" cy="12" fill="none" r="4" stroke="url(#igConnectGradient)" stroke-width="2"/><circle cx="17.4" cy="6.8" fill="url(#igConnectGradient)" r="1.15"/></svg></span><strong>Instagram</strong><span class="desc" data-en="Photos, travel, and everyday life" data-zh="照片、旅行和日常生活">Photos, travel, and everyday life</span></a>
+<button class="copy-btn" data-copy="https://www.instagram.com/timothynathaniellaurencio/" data-type="link" type="button"><i class="fa-regular fa-copy"></i><span data-en="Copy" data-zh="复制">Copy</span></button>
+</div>
+<div class="contact-row" data-brand="email">
+<a class="contact-main" data-track="Email Click" data-track-label="Contact" href="mailto:timothynathaniellaurencio@gmail.com"><span class="contact-icon"><i class="fa-regular fa-envelope"></i></span><strong>Email</strong><span class="desc" data-en="Send me an email" data-zh="给我发邮件">Send me an email</span></a>
+<button class="copy-btn" data-copy="timothynathaniellaurencio@gmail.com" data-type="email" type="button"><i class="fa-regular fa-copy"></i><span data-en="Copy" data-zh="复制">Copy</span></button>
+</div>
+<div class="contact-row" data-brand="linkedin">
+<a class="contact-main" href="https://www.linkedin.com/in/timothy-nathaniel-laurencio-727005413" rel="noopener noreferrer" target="_blank"><span class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></span><strong>LinkedIn</strong><span class="desc" data-en="Work and professional updates" data-zh="工作与职业动态">Work and professional updates</span></a>
+<button class="copy-btn" data-copy="https://www.linkedin.com/in/timothy-nathaniel-laurencio-727005413" data-type="link" type="button"><i class="fa-regular fa-copy"></i><span data-en="Copy" data-zh="复制">Copy</span></button>
+</div>
+<div class="contact-row" data-brand="github">
+<a class="contact-main" href="https://github.com/Timothy1016" rel="noopener noreferrer" target="_blank"><span class="contact-icon"><i class="fa-brands fa-github"></i></span><strong>GitHub</strong><span class="desc" data-en="Code, projects, and experiments" data-zh="代码、项目和实验">Code, projects, and experiments</span></a>
+<button class="copy-btn" data-copy="https://github.com/Timothy1016" data-type="link" type="button"><i class="fa-regular fa-copy"></i><span data-en="Copy" data-zh="复制">Copy</span></button>
+</div>
+<div class="contact-row cv-contact-row" data-brand="cv">
+<a class="contact-main" href="resume.html"><span class="contact-icon"><i class="fa-regular fa-file-lines" aria-hidden="true"></i></span><strong>CV</strong><span class="desc" data-en="Preview or download my CV" data-zh="预览或下载我的简历">Preview or download my CV</span></a>
+<div class="cv-row-actions"><button class="cv-action cv-preview-trigger" data-cv-preview-trigger type="button"><i class="fa-regular fa-eye" aria-hidden="true"></i><span data-en="Preview" data-zh="预览">Preview</span></button><a class="cv-action" download data-cv-en="TimothyNathanielLaurencio_CV.pdf" data-cv-zh="TimothyNathanielLaurencio_CV_ZH-CN.pdf" data-cv-id="TimothyNathanielLaurencio_CV_ID.pdf" href="TimothyNathanielLaurencio_CV.pdf"><i class="fa-solid fa-download" aria-hidden="true"></i><span data-en="Download" data-zh="下载">Download</span></a></div>
+</div>
+</div>
 </section>
-
-<section class="section">
- <div class="container">
-   <div class="section-head reveal"><div class="eyebrow" data-en="Write something" data-zh="写点什么">Write something</div><h2 data-en="A short message is enough." data-zh="简单说几句就够了。">A short message is enough.</h2></div>
-   <form class="contact-form reveal" id="contactForm">
-     <div class="field"><label data-en="Name" data-zh="名字">Name</label><input id="name" required></div>
-     <div class="field"><label data-en="Email" data-zh="邮箱">Email</label><input id="email" type="email" required></div>
-     <div class="field"><label data-en="Topic" data-zh="主题">Topic</label><input id="topic"></div>
-     <div class="field"><label data-en="Timeline" data-zh="时间">Timeline</label><input id="timeline"></div>
-     <div class="field full"><label data-en="Message" data-zh="消息">Message</label><textarea id="message" required></textarea></div>
-     <div class="form-actions"><button class="button primary" type="submit"><i class="fa-regular fa-envelope"></i><span data-en="Prepare email" data-zh="准备邮件">Prepare email</span></button></div>
-   </form>
- </div>
+<section class="section project-inquiry-section" id="project">
+<div class="container">
+<div class="project-inquiry-head reveal">
+<div><div class="eyebrow" data-en="Start a project" data-zh="开始项目">Start a project</div><h2 data-en="Tell me what you want to build." data-zh="告诉我你想做什么。">Tell me what you want to build.</h2></div>
+<p data-en="A short brief is enough. I’ll use it to understand the scope before we continue the conversation." data-zh="简单介绍一下就够了。我会先了解项目范围，再继续沟通。">A short brief is enough. I’ll use it to understand the scope before we continue the conversation.</p>
+</div>
+<form action="https://formsubmit.co/timothynathaniellaurencio@gmail.com" aria-describedby="project-form-note brief-step-status" aria-label="Project brief" data-en-aria-label="Project brief" data-zh-aria-label="项目需求" data-id-aria-label="Brief proyek" class="project-form reveal" data-track-form="Project Inquiry" id="contactForm" method="POST"><input name="_autoresponse" type="hidden" value="Thanks for your project brief. I received your message and will review the scope before replying."/><input id="form_started_at" name="form_started_at" type="hidden" value=""/><input name="_subject" type="hidden" value="New portfolio project inquiry"/><input name="_template" type="hidden" value="table"/><input name="_captcha" type="hidden" value="true"/><input name="_next" type="hidden" value="https://timothy1016.github.io/TimothyNathanielLaurencio/success.html"/><input aria-label="Leave this field empty" autocomplete="off" class="form-honeypot" name="_honey" tabindex="-1" type="text"/>
+  <div class="brief-progress form-wide">
+    <div class="brief-progress-track" id="brief-progress" role="progressbar" aria-label="Project brief progress" data-en-aria-label="Project brief progress" data-zh-aria-label="项目需求进度" data-id-aria-label="Progres brief proyek" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1"><span></span></div>
+    <span class="brief-step-count" id="brief-step-count">Step 1 of 5</span>
+  </div>
+  <section class="brief-step form-wide" data-brief-step>
+    <header><p class="brief-step-kicker" data-en="01 / PROJECT" data-zh="01 / 项目" data-id="01 / PROYEK">01 / PROJECT</p><h3 data-en="What are you planning?" data-zh="你正在规划什么项目？" data-id="Proyek seperti apa yang ingin Anda buat?">What are you planning?</h3><p data-en="Choose the closest project type and share what you want the website to achieve." data-zh="选择最接近的项目类型，并说明你希望网站实现什么目标。" data-id="Pilih jenis proyek yang paling sesuai dan ceritakan tujuan yang ingin dicapai.">Choose the closest project type and share what you want the website to achieve.</p></header>
+    <label><span data-en="Website type" data-zh="网站类型" data-id="Jenis website">Website type</span><select id="topic" name="topic" required><option value="" selected disabled data-en="Choose a website type" data-zh="选择网站类型" data-id="Pilih jenis website">Choose a website type</option><option value="Portfolio Website" data-en="Portfolio website" data-zh="作品集网站" data-id="Website portofolio">Portfolio website</option><option value="Business Website" data-en="Business website" data-zh="企业网站" data-id="Website bisnis">Business website</option><option value="Landing Page" data-en="Landing page" data-zh="落地页" data-id="Landing page">Landing page</option><option value="Dashboard / Web App" data-en="Dashboard / web app" data-zh="仪表盘 / Web 应用" data-id="Dashboard / aplikasi web">Dashboard / web app</option><option value="E-commerce Website" data-en="E-commerce website" data-zh="电商网站" data-id="Website e-commerce">E-commerce website</option><option value="Other Project" data-en="Something else" data-zh="其他项目" data-id="Lainnya">Something else</option></select></label>
+    <label class="form-wide"><span data-en="Project goal" data-zh="项目目标" data-id="Tujuan proyek">Project goal</span><textarea id="goal" name="goal" data-en-placeholder="What should this website help you or your visitors do?" data-zh-placeholder="你希望这个网站帮助你或访客完成什么？" data-id-placeholder="Apa yang ingin Anda atau pengunjung lakukan melalui website ini?" placeholder="What should this website help you or your visitors do?" required rows="4"></textarea></label>
+  </section>
+  <section class="brief-step form-wide" data-brief-step>
+    <header><p class="brief-step-kicker" data-en="02 / SCOPE" data-zh="02 / 范围" data-id="02 / CAKUPAN">02 / SCOPE</p><h3 data-en="What should it include?" data-zh="网站需要包含什么？" data-id="Fitur apa yang dibutuhkan?">What should it include?</h3><p data-en="Select anything you already have in mind. You can also add details in your own words." data-zh="选择你已经想到的功能，也可以用自己的话补充说明。" data-id="Pilih fitur yang sudah Anda pikirkan. Anda juga bisa menambahkan detail dengan kata-kata sendiri.">Select anything you already have in mind. You can also add details in your own words.</p></header>
+    <fieldset class="brief-feature-set form-wide" aria-describedby="feature-help"><legend data-en="Features you need" data-zh="所需功能" data-id="Fitur yang dibutuhkan">Features you need</legend><p class="brief-feature-hint" id="feature-help" data-en="Choose at least one, or select “Not sure yet.”" data-zh="至少选择一项，或选择“尚未确定”。" data-id="Pilih minimal satu, atau pilih “Belum yakin.”">Choose at least one, or select “Not sure yet.”</p><div class="brief-feature-grid">
+      <label class="brief-feature"><input name="features[]" type="checkbox" value="Contact form"><span data-en="Contact form" data-zh="联系表单" data-id="Formulir kontak">Contact form</span></label>
+      <label class="brief-feature"><input name="features[]" type="checkbox" value="Booking / scheduling"><span data-en="Booking / scheduling" data-zh="预约 / 日程安排" data-id="Pemesanan / jadwal">Booking / scheduling</span></label>
+      <label class="brief-feature"><input name="features[]" type="checkbox" value="Online payments"><span data-en="Online payments" data-zh="在线支付" data-id="Pembayaran online">Online payments</span></label>
+      <label class="brief-feature"><input name="features[]" type="checkbox" value="Blog / articles"><span data-en="Blog / articles" data-zh="博客 / 文章" data-id="Blog / artikel">Blog / articles</span></label>
+      <label class="brief-feature"><input name="features[]" type="checkbox" value="Admin dashboard"><span data-en="Admin dashboard" data-zh="管理后台" data-id="Dashboard admin">Admin dashboard</span></label>
+      <label class="brief-feature"><input name="features[]" type="checkbox" value="Login / user accounts"><span data-en="Login / user accounts" data-zh="登录 / 用户账户" data-id="Login / akun pengguna">Login / user accounts</span></label>
+      <label class="brief-feature"><input name="features[]" type="checkbox" value="Search / filtering"><span data-en="Search / filtering" data-zh="搜索 / 筛选" data-id="Pencarian / filter">Search / filtering</span></label>
+      <label class="brief-feature"><input name="features[]" type="checkbox" value="Multiple languages"><span data-en="Multiple languages" data-zh="多语言" data-id="Beberapa bahasa">Multiple languages</span></label>
+      <label class="brief-feature"><input name="features[]" type="checkbox" value="Not sure yet — please advise"><span data-en="Not sure yet — please advise" data-zh="尚未确定 — 请给建议" data-id="Belum yakin — mohon sarankan">Not sure yet — please advise</span></label>
+    </div></fieldset>
+    <label class="form-wide"><span data-en="Other feature details (optional)" data-zh="其他功能细节（选填）" data-id="Detail fitur lainnya (opsional)">Other feature details (optional)</span><textarea id="featureNotes" name="feature_notes" data-en-placeholder="Mention any must-have features, pages, or integrations." data-zh-placeholder="写下必须具备的功能、页面或集成。" data-id-placeholder="Tuliskan fitur, halaman, atau integrasi yang wajib ada." placeholder="Mention any must-have features, pages, or integrations." rows="3"></textarea></label>
+  </section>
+  <section class="brief-step form-wide" data-brief-step>
+    <header><p class="brief-step-kicker" data-en="03 / TIMING" data-zh="03 / 时间安排" data-id="03 / WAKTU">03 / TIMING</p><h3 data-en="When should it be ready?" data-zh="希望什么时候完成？" data-id="Kapan website diharapkan siap?">When should it be ready?</h3><p data-en="A rough timeline and a reference link help set the right scope." data-zh="大致的时间安排和参考链接有助于确定合适的项目范围。" data-id="Perkiraan waktu dan tautan referensi membantu menentukan cakupan yang sesuai.">A rough timeline and a reference link help set the right scope.</p></header>
+    <label><span data-en="Target deadline" data-zh="期望截止时间" data-id="Target tenggat waktu">Target deadline</span><select id="timeline" name="timeline" required><option value="" data-en="Choose a timeline" data-zh="选择时间安排" data-id="Pilih perkiraan waktu">Choose a timeline</option><option value="As soon as possible" data-en="As soon as possible" data-zh="尽快" data-id="Secepatnya">As soon as possible</option><option value="2–4 weeks" data-en="Within 2–4 weeks" data-zh="2–4 周内" data-id="Dalam 2–4 minggu">Within 2–4 weeks</option><option value="1–2 months" data-en="Within 1–2 months" data-zh="1–2 个月内" data-id="Dalam 1–2 bulan">Within 1–2 months</option><option value="Flexible" data-en="Flexible / to discuss" data-zh="时间灵活 / 可讨论" data-id="Fleksibel / bisa didiskusikan">Flexible / to discuss</option></select></label>
+    <label><span data-en="Budget range (optional)" data-zh="预算范围（选填）" data-id="Kisaran anggaran (opsional)">Budget range (optional)</span><select id="budget" name="budget"><option value="Not sure yet" data-en="Not sure yet" data-zh="尚未确定" data-id="Belum yakin">Not sure yet</option><option value="Under IDR 2.5M" data-en="Under IDR 2.5M" data-zh="低于 IDR 2.5M" data-id="Di bawah IDR 2,5 juta">Under IDR 2.5M</option><option value="IDR 2.5M – 5M" data-en="IDR 2.5M – 5M" data-zh="IDR 2.5M – 5M" data-id="IDR 2,5–5 juta">IDR 2.5M – 5M</option><option value="IDR 5M – 10M" data-en="IDR 5M – 10M" data-zh="IDR 5M – 10M" data-id="IDR 5–10 juta">IDR 5M – 10M</option><option value="IDR 10M+" data-en="IDR 10M+" data-zh="IDR 10M+" data-id="IDR 10 juta ke atas">IDR 10M+</option></select></label>
+    <label class="form-wide"><span data-en="Reference link (optional)" data-zh="参考链接（选填）" data-id="Tautan referensi (opsional)">Reference link (optional)</span><input id="reference" inputmode="url" name="reference" type="url" data-en-placeholder="https://example.com" data-zh-placeholder="https://example.com" data-id-placeholder="https://contoh.com" placeholder="https://example.com"></label>
+  </section>
+  <section class="brief-step form-wide" data-brief-step>
+    <header><p class="brief-step-kicker" data-en="04 / CONTACT" data-zh="04 / 联系方式" data-id="04 / KONTAK">04 / CONTACT</p><h3 data-en="Where can I reach you?" data-zh="我可以如何联系你？" data-id="Bagaimana saya bisa menghubungi Anda?">Where can I reach you?</h3><p data-en="Share your contact details and I’ll follow up about the brief." data-zh="留下联系方式，我会就项目需求与你联系。" data-id="Tinggalkan detail kontak agar saya bisa menindaklanjuti brief ini.">Share your contact details and I’ll follow up about the brief.</p></header>
+    <label><span data-en="Your name" data-zh="你的名字" data-id="Nama Anda">Your name</span><input autocomplete="name" id="name" name="name" data-en-placeholder="Your name" data-zh-placeholder="你的名字" data-id-placeholder="Nama Anda" placeholder="Your name" required></label>
+    <label><span data-en="Email" data-zh="邮箱" data-id="Email">Email</span><input autocomplete="email" id="email" name="email" type="email" data-en-placeholder="you@example.com" data-zh-placeholder="you@example.com" data-id-placeholder="nama@contoh.com" placeholder="you@example.com" required></label>
+  </section>
+  <section class="brief-step brief-review form-wide" data-brief-step>
+    <header><p class="brief-step-kicker" data-en="05 / REVIEW" data-zh="05 / 确认" data-id="05 / TINJAU">05 / REVIEW</p><h3 data-en="Review your brief." data-zh="确认项目需求。" data-id="Tinjau brief proyek Anda.">Review your brief.</h3><p data-en="Check the details below. Use Edit to return to any section before sending." data-zh="请检查以下信息。发送前可点击“编辑”返回修改。" data-id="Periksa detail di bawah. Pilih Edit untuk mengubah bagian mana pun sebelum mengirim.">Check the details below. Use Edit to return to any section before sending.</p></header>
+    <div class="brief-review-grid">
+      <section class="brief-review-card" aria-labelledby="review-project-title"><div class="brief-review-card-heading"><h4 id="review-project-title" data-en="Project" data-zh="项目" data-id="Proyek">Project</h4><button type="button" class="brief-review-edit" data-brief-edit="0" aria-label="Edit project details" data-en="Edit" data-zh="编辑" data-id="Edit" data-en-aria-label="Edit project details" data-zh-aria-label="编辑项目详情" data-id-aria-label="Edit detail proyek">Edit</button></div><dl><div><dt data-en="Website type" data-zh="网站类型" data-id="Jenis website">Website type</dt><dd data-review-value="topic"></dd></div><div><dt data-en="Goal" data-zh="目标" data-id="Tujuan">Goal</dt><dd data-review-value="goal"></dd></div></dl></section>
+      <section class="brief-review-card" aria-labelledby="review-scope-title"><div class="brief-review-card-heading"><h4 id="review-scope-title" data-en="Scope" data-zh="范围" data-id="Cakupan">Scope</h4><button type="button" class="brief-review-edit" data-brief-edit="1" aria-label="Edit project features" data-en="Edit" data-zh="编辑" data-id="Edit" data-en-aria-label="Edit project features" data-zh-aria-label="编辑项目功能" data-id-aria-label="Edit fitur proyek">Edit</button></div><dl><div><dt data-en="Features" data-zh="功能" data-id="Fitur">Features</dt><dd data-review-value="features"></dd></div><div><dt data-en="Other details" data-zh="其他细节" data-id="Detail lainnya">Other details</dt><dd data-review-value="featureNotes"></dd></div></dl></section>
+      <section class="brief-review-card" aria-labelledby="review-timing-title"><div class="brief-review-card-heading"><h4 id="review-timing-title" data-en="Timing &amp; reference" data-zh="时间与参考" data-id="Waktu &amp; referensi">Timing &amp; reference</h4><button type="button" class="brief-review-edit" data-brief-edit="2" aria-label="Edit timing and reference" data-en="Edit" data-zh="编辑" data-id="Edit" data-en-aria-label="Edit timing and reference" data-zh-aria-label="编辑时间与参考链接" data-id-aria-label="Edit waktu dan referensi">Edit</button></div><dl><div><dt data-en="Target deadline" data-zh="期望时间" data-id="Tenggat">Target deadline</dt><dd data-review-value="timeline"></dd></div><div><dt data-en="Budget range" data-zh="预算范围" data-id="Anggaran">Budget range</dt><dd data-review-value="budget"></dd></div><div><dt data-en="Reference link" data-zh="参考链接" data-id="Tautan referensi">Reference link</dt><dd data-review-value="reference"></dd></div></dl></section>
+      <section class="brief-review-card" aria-labelledby="review-contact-title"><div class="brief-review-card-heading"><h4 id="review-contact-title" data-en="Contact" data-zh="联系方式" data-id="Kontak">Contact</h4><button type="button" class="brief-review-edit" data-brief-edit="3" aria-label="Edit contact details" data-en="Edit" data-zh="编辑" data-id="Edit" data-en-aria-label="Edit contact details" data-zh-aria-label="编辑联系方式" data-id-aria-label="Edit detail kontak">Edit</button></div><dl><div><dt data-en="Name" data-zh="姓名" data-id="Nama">Name</dt><dd data-review-value="name"></dd></div><div><dt data-en="Email" data-zh="邮箱" data-id="Email">Email</dt><dd data-review-value="email"></dd></div></dl></section>
+    </div>
+  </section>
+  <div class="brief-step-navigation form-wide"><button class="brief-back" data-brief-back type="button" hidden><span aria-hidden="true">←</span> <span data-en="Back" data-zh="上一步" data-id="Kembali">Back</span></button><button class="brief-next" data-brief-next type="button" hidden><span data-en="Continue" data-zh="继续" data-id="Lanjutkan">Continue</span> <span aria-hidden="true">→</span></button><button class="form-submit" data-brief-submit type="submit"><span data-en="Send project brief" data-zh="发送项目需求" data-id="Kirim brief proyek">Send project brief</span> ↗</button><button class="form-whatsapp" id="whatsappBrief" type="button"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span data-en="Send via WhatsApp" data-zh="通过 WhatsApp 发送" data-id="Kirim melalui WhatsApp">Send via WhatsApp</span></button><small data-en="Protected by a honeypot and FormSubmit CAPTCHA. You can also send the brief through WhatsApp." data-zh="表单使用蜜罐字段和 FormSubmit CAPTCHA 防止垃圾信息，也可以通过 WhatsApp 发送需求。" data-id="Form ini dilindungi honeypot dan CAPTCHA FormSubmit. Anda juga bisa mengirim brief melalui WhatsApp." id="project-form-note">Protected by a honeypot and FormSubmit CAPTCHA. You can also send the brief through WhatsApp.</small></div>
+  <div class="brief-step-status form-wide" id="brief-step-status" role="status" aria-live="polite" aria-atomic="true"></div><div aria-atomic="true" aria-live="polite" class="form-status form-wide" id="form-status" role="status"></div>
+</form>
+</div>
+</section>
+<section class="section contact-topics-section">
+<div class="container">
+<div class="contact-topics-head reveal">
+<div class="eyebrow" data-en="Open to conversations about" data-zh="欢迎交流">Open to conversations about</div>
+<h2 data-en="A few things I’m always happy to talk about." data-zh="这些话题，我一直很乐意聊。">A few things I’m always happy to talk about.</h2>
+</div>
+<div aria-label="Topics Timothy is open to discussing" class="contact-topics reveal">
+<div class="contact-topic">
+<span class="topic-index">01</span>
+<strong data-en="Software Engineering" data-zh="软件工程">Software Engineering</strong>
+<p data-en="Projects, product ideas, full-stack work, and building something useful together." data-zh="项目、产品想法、全栈开发，以及一起做真正有用的东西。">Projects, product ideas, full-stack work, and building something useful together.</p>
+</div>
+<div class="contact-topic">
+<span class="topic-index">02</span>
+<strong data-en="AI &amp; Automation" data-zh="人工智能与自动化">AI &amp; Automation</strong>
+<p data-en="Practical AI, LLM workflows, automation, and experiments that make everyday work simpler." data-zh="实用 AI、LLM 工作流、自动化，以及让日常工作更简单的实验。">Practical AI, LLM workflows, automation, and experiments that make everyday work simpler.</p>
+</div>
+<div class="contact-topic">
+<span class="topic-index">03</span>
+<strong data-en="Graduate Study &amp; Research" data-zh="研究生学习与研究">Graduate Study &amp; Research</strong>
+<p data-en="Master’s opportunities, research directions, academic collaboration, and learning from people doing serious work." data-zh="硕士机会、研究方向、学术合作，以及向认真做研究的人学习。">Master’s opportunities, research directions, academic collaboration, and learning from people doing serious work.</p>
+</div>
+<div class="contact-topic">
+<span class="topic-index">04</span>
+<strong data-en="Career &amp; Collaboration" data-zh="职业与合作">Career &amp; Collaboration</strong>
+<p data-en="Software roles, technology-related opportunities, collaboration, networking, or simply exchanging ideas." data-zh="软件岗位、科技相关机会、合作、人脉交流，或只是交换想法。">Software roles, technology-related opportunities, collaboration, networking, or simply exchanging ideas.</p>
+</div>
+</div>
+<div class="contact-fast-note reveal">
+<span aria-hidden="true" class="fast-note-dot"></span>
+<span data-en="Usually replies fastest on WhatsApp or email." data-zh="通常通过 WhatsApp 或电子邮件回复最快。">Usually replies fastest on WhatsApp or email.</span>
+</div>
+</div>
 </section>
 </main>
-
 <footer>
-  <div class="container footer-inner">
-    <span>© Timothy Nathaniel Laurencio</span>
-    <span data-en="Built slowly, edited often." data-zh="慢慢做，常常改。">Built slowly, edited often.</span>
-  </div>
+<div class="container footer-inner">
+<span>© 2026 Timothy Nathaniel Laurencio. All rights reserved.</span>
+<a data-en="Back to top ↑" data-zh="返回顶部 ↑" href="#top">Back to top ↑</a>
+</div>
 </footer>
 <div class="toast" id="toast"></div>
-
+<div class="cv-preview-modal" id="cvPreviewModal" aria-hidden="true" hidden>
+<button class="cv-preview-backdrop" type="button" data-cv-close aria-label="Close CV preview"></button>
+<section class="cv-preview-dialog" role="dialog" aria-modal="true" aria-labelledby="cvPreviewTitle" tabindex="-1">
+<header class="cv-preview-header"><div><p data-en="DOCUMENT PREVIEW" data-zh="文件预览">DOCUMENT PREVIEW</p><h2 id="cvPreviewTitle" data-en="Curriculum Vitae" data-zh="个人简历">Curriculum Vitae</h2></div><button class="cv-preview-close" type="button" data-cv-close aria-label="Close preview">×</button></header>
+<object class="cv-preview-frame" data-cv-en="TimothyNathanielLaurencio_CV.pdf" data-cv-zh="TimothyNathanielLaurencio_CV_ZH-CN.pdf" data-cv-id="TimothyNathanielLaurencio_CV_ID.pdf" data="TimothyNathanielLaurencio_CV.pdf#view=FitH" type="application/pdf"><div class="cv-preview-fallback"><p data-en="Your browser cannot display the PDF here." data-zh="浏览器无法在此显示 PDF。">Your browser cannot display the PDF here.</p><a data-cv-en="TimothyNathanielLaurencio_CV.pdf" data-cv-zh="TimothyNathanielLaurencio_CV_ZH-CN.pdf" data-cv-id="TimothyNathanielLaurencio_CV_ID.pdf" href="TimothyNathanielLaurencio_CV.pdf" target="_blank" rel="noopener noreferrer" data-en="Open the CV PDF" data-zh="打开简历 PDF">Open the CV PDF</a></div></object>
+<footer class="cv-preview-actions"><a class="cv-action cv-action-secondary" data-cv-en="TimothyNathanielLaurencio_CV.pdf" data-cv-zh="TimothyNathanielLaurencio_CV_ZH-CN.pdf" data-cv-id="TimothyNathanielLaurencio_CV_ID.pdf" href="TimothyNathanielLaurencio_CV.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span data-en="Open PDF" data-zh="打开 PDF">Open PDF</span></a><a class="cv-action" download data-cv-en="TimothyNathanielLaurencio_CV.pdf" data-cv-zh="TimothyNathanielLaurencio_CV_ZH-CN.pdf" data-cv-id="TimothyNathanielLaurencio_CV_ID.pdf" href="TimothyNathanielLaurencio_CV.pdf"><i class="fa-solid fa-download" aria-hidden="true"></i><span data-en="Download PDF" data-zh="下载 PDF">Download PDF</span></a></footer>
+</section></div>
+<script src="project-brief.js?v=portfolio-19"></script>
 <script>
 
 const THEME_KEY='portfolio-theme';
 const LANG_KEY='portfolio-language';
-const SOUND_KEY='portfolio-sound';
 
 function currentTheme(){return document.documentElement.dataset.theme||'dark'}
 function applyTheme(theme){
@@ -404,42 +224,15 @@ function applyTheme(theme){
   document.body.classList.toggle('dark',t==='dark');
   localStorage.setItem(THEME_KEY,t);
   const meta=document.querySelector('meta[name="theme-color"]');
-  if(meta)meta.setAttribute('content',t==='dark'?'#000000':'#EDE3D3');
+  if(meta)meta.setAttribute('content',t==='dark'?'#10100e':'#f2eadb');
   const icon=document.querySelector('#themeBtn i');
   if(icon)icon.className=t==='dark'?'fa-regular fa-sun':'fa-regular fa-moon';
 }
 function toggleTheme(){applyTheme(currentTheme()==='dark'?'light':'dark')}
 
-let currentLanguage=localStorage.getItem(LANG_KEY)||'en';
-function applyLanguage(lang){
-  currentLanguage=lang==='zh'?'zh':'en';
-  localStorage.setItem(LANG_KEY,currentLanguage);
-  document.documentElement.lang=currentLanguage==='zh'?'zh-CN':'en';
-  document.querySelectorAll('[data-en][data-zh]').forEach(el=>{
-    el.textContent=el.dataset[currentLanguage];
-  });
-  const btn=document.getElementById('langBtn');
-  if(btn)btn.textContent=currentLanguage==='en'?'中文':'EN';
-}
+let currentLanguage=['en','zh','id'].includes(localStorage.getItem(LANG_KEY))?localStorage.getItem(LANG_KEY):'en';
+window.addEventListener('portfolio-language-change',event=>{currentLanguage=event.detail?.language||'en'});
 
-let soundOn=localStorage.getItem(SOUND_KEY)!=='off';
-function clickSound(freq=520){
-  if(!soundOn)return;
-  try{
-    const ctx=new (window.AudioContext||window.webkitAudioContext)();
-    const osc=ctx.createOscillator(),gain=ctx.createGain();
-    osc.frequency.value=freq;osc.type='sine';
-    gain.gain.setValueAtTime(.025,ctx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+.07);
-    osc.connect(gain);gain.connect(ctx.destination);osc.start();osc.stop(ctx.currentTime+.08);
-  }catch(e){}
-}
-function toggleSound(){
-  soundOn=!soundOn;
-  localStorage.setItem(SOUND_KEY,soundOn?'on':'off');
-  const i=document.querySelector('#soundBtn i');
-  if(i)i.className=soundOn?'fa-solid fa-volume-low':'fa-solid fa-volume-xmark';
-}
 
 function showToast(message){
   const t=document.getElementById('toast');
@@ -451,13 +244,8 @@ function showToast(message){
 
 document.addEventListener('DOMContentLoaded',()=>{
   applyTheme(localStorage.getItem(THEME_KEY)||'dark');
-  applyLanguage(currentLanguage);
-  const si=document.querySelector('#soundBtn i');
-  if(si)si.className=soundOn?'fa-solid fa-volume-low':'fa-solid fa-volume-xmark';
 
-  document.getElementById('themeBtn')?.addEventListener('click',()=>{toggleTheme();clickSound(610)});
-  document.getElementById('soundBtn')?.addEventListener('click',toggleSound);
-  document.getElementById('langBtn')?.addEventListener('click',()=>applyLanguage(currentLanguage==='en'?'zh':'en'));
+  document.getElementById('themeBtn')?.addEventListener('click',toggleTheme);
   document.getElementById('mobileBtn')?.addEventListener('click',()=>{
     document.getElementById('mobileMenu')?.classList.toggle('open');
   });
@@ -480,28 +268,39 @@ async function copyValue(btn){
     try{ok=document.execCommand('copy')}catch(e){}
     ta.remove();
   }
-  if(!ok)return showToast(currentLanguage==='zh'?'复制失败':'Could not copy');
+  if(!ok)return showToast(({en:'Could not copy',zh:'复制失败',id:'Tidak dapat menyalin'})[currentLanguage]);
   btn.classList.add('copied');
   const icon=btn.querySelector('i'),label=btn.querySelector('span');
   if(icon)icon.className='fa-solid fa-check';
-  if(label)label.textContent=currentLanguage==='zh'?'已复制':'Copied';
+  const copyLabels={en:{phone:'Phone number copied',email:'Email copied',link:'Link copied'},zh:{phone:'号码已复制',email:'邮箱已复制',link:'链接已复制'},id:{phone:'Nomor telepon disalin',email:'Email disalin',link:'Tautan disalin'}};
   const type=btn.dataset.type;
-  const msg=currentLanguage==='zh'?(type==='phone'?'号码已复制':type==='email'?'邮箱已复制':'链接已复制'):(type==='phone'?'Phone number copied':type==='email'?'Email copied':'Link copied');
-  showToast(msg);clickSound(720);
-  setTimeout(()=>{btn.classList.remove('copied');if(icon)icon.className='fa-regular fa-copy';if(label)label.textContent=currentLanguage==='zh'?'复制':'Copy'},1300);
+  const msg=copyLabels[currentLanguage][type==='phone'?'phone':type==='email'?'email':'link'];
+  if(label)label.textContent=currentLanguage==='zh'?'已复制':currentLanguage==='id'?'Disalin':'Copied';
+  showToast(msg);
+  setTimeout(()=>{btn.classList.remove('copied');if(icon)icon.className='fa-regular fa-copy';if(label)label.textContent=currentLanguage==='zh'?'复制':currentLanguage==='id'?'Salin':'Copy'},1300);
 }
 document.querySelectorAll('.copy-btn').forEach(btn=>btn.addEventListener('click',()=>copyValue(btn)));
-document.getElementById('contactForm')?.addEventListener('submit',e=>{
-  e.preventDefault();
-  const subject=encodeURIComponent(document.getElementById('topic').value||'Portfolio contact');
-  const body=encodeURIComponent(
-`Name: ${document.getElementById('name').value}
-Email: ${document.getElementById('email').value}
-Timeline: ${document.getElementById('timeline').value}
-
-${document.getElementById('message').value}`
-  );
-  location.href=`mailto:timothynathaniellaurencio@gmail.com?subject=${subject}&body=${body}`;
+document.getElementById('whatsappBrief')?.addEventListener('click',()=>{
+  const t={en:{intro:'Hi Timothy, I have a website project.',name:'Name',email:'Email',type:'Website type',goal:'Goal',features:'Features',other:'Other details',budget:'Budget',deadline:'Target deadline',reference:'Reference'},zh:{intro:'你好 Timothy，我有一个网站项目。',name:'姓名',email:'邮箱',type:'网站类型',goal:'项目目标',features:'所需功能',other:'其他细节',budget:'预算',deadline:'期望时间',reference:'参考链接'},id:{intro:'Hai Timothy, saya punya proyek website.',name:'Nama',email:'Email',type:'Jenis website',goal:'Tujuan',features:'Fitur',other:'Detail lainnya',budget:'Anggaran',deadline:'Target waktu',reference:'Tautan referensi'}}[currentLanguage];
+  const value=id=>document.getElementById(id)?.value?.trim()||'';
+  const selected=id=>document.querySelector(`#${id} option:checked`)?.textContent?.trim()||value(id);
+  const features=[...document.querySelectorAll('input[name="features[]"]:checked')].map(input=>input.closest('label')?.querySelector('span')?.textContent?.trim()||input.value).join(', ');
+  const lines=[t.intro,'',`${t.name}: ${value('name')||'-'}`,`${t.email}: ${value('email')||'-'}`,`${t.type}: ${selected('topic')||'-'}`,`${t.goal}: ${value('goal')||'-'}`,`${t.features}: ${features||'-'}`,`${t.other}: ${value('featureNotes')||'-'}`,`${t.budget}: ${selected('budget')||'-'}`,`${t.deadline}: ${selected('timeline')||'-'}`,`${t.reference}: ${value('reference')||'-'}`];
+  const text=encodeURIComponent(lines.join('\n'));
+  window.open(`https://wa.me/6285286289012?text=${text}`,'_blank','noopener,noreferrer');
+});
+const projectForm=document.getElementById('contactForm');
+const formStarted=document.getElementById('form_started_at');
+if(formStarted)formStarted.value=String(Date.now());
+projectForm?.addEventListener('submit',(event)=>{
+  if(event.defaultPrevented)return;
+  if(!projectForm.querySelector('.brief-review:not([hidden])'))return;
+  const elapsed=Date.now()-Number(formStarted?.value||0);
+  if(elapsed<1800){event.preventDefault();showToast?.(({en:'Please review the form before sending.',zh:'请检查内容后再发送。',id:'Periksa kembali brief sebelum mengirim.'})[currentLanguage]);return;}
+  const responseCopy={en:'Thanks for your project brief. I received your message and will review the scope before replying.',zh:'感谢您提交项目需求。我已收到您的信息，会先了解项目范围，然后尽快回复。',id:'Terima kasih sudah mengirim brief proyek. Pesan Anda sudah saya terima dan akan saya tinjau sebelum membalas.'};
+  const autoResponse=projectForm.querySelector('[name="_autoresponse"]');if(autoResponse)autoResponse.value=responseCopy[currentLanguage]||responseCopy.en;
+  const submit=projectForm.querySelector('.form-submit');if(submit){submit.disabled=true;submit.setAttribute('aria-busy','true');}
+  window.trackPortfolioEvent?.('Project Brief Submit',{project:document.getElementById('topic')?.value||''});
 });
 </script>
-</body></html>
+<script defer="True" src="form-accessibility.js?v=portfolio-26"></script></body></html>

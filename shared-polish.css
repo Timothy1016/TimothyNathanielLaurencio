@@ -1,0 +1,12 @@
+/* shared production polish */
+
+
+.skill-evidence-links{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin-top:1rem}.skill-evidence-label{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.skill-evidence-links a{font-size:.75rem;text-decoration:none;padding:.48rem .7rem;border:1px solid var(--line);border-radius:999px;color:var(--text);transition:transform .18s ease,border-color .18s ease,background .18s ease}.skill-evidence-links a:hover{transform:translateY(-1px);border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.principles-section{position:relative}.principles-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.7fr);gap:3rem;align-items:end;margin-bottom:2rem}.principles-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:24px;overflow:hidden}.principles-grid article{background:var(--bg);padding:1.6rem;min-height:230px}.principles-grid article>span{display:inline-flex;font:700 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent);letter-spacing:.1em;margin-bottom:2.4rem}.principles-grid h3{font-size:1.08rem;margin:0 0 .75rem}.principles-grid p{margin:0;color:var(--muted);line-height:1.7;font-size:.88rem}
+@media(max-width:900px){.principles-head{grid-template-columns:1fr;gap:1rem}.principles-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.principles-grid{grid-template-columns:1fr}.principles-grid article{min-height:auto}.skill-evidence-links{align-items:flex-start;flex-direction:column}}
+@media(pointer:coarse){.custom-cursor,.custom-cursor-dot{display:none!important}.project-card[data-tilt],.project-featured[data-tilt]{transform:none!important}}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.form-honeypot{position:absolute!important;left:-10000px!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}.form-submit[disabled]{opacity:.6;cursor:wait}
+
+

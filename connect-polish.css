@@ -1,0 +1,59 @@
+/* Refined Connect layout and genuine, recognizable platform marks. */
+#main-content > .contact-profile-hero{padding:clamp(38px,5vw,68px) 0 18px!important}
+#main-content .contact-profile-hero .profile-hero-card{width:min(960px,100%);grid-template-columns:clamp(132px,15vw,176px) minmax(0,1fr)!important;gap:clamp(24px,4vw,48px)!important;padding:18px 0!important}
+#main-content .contact-profile-hero .avatar-hero{width:clamp(132px,15vw,176px)!important;height:clamp(132px,15vw,176px)!important}
+#main-content .contact-profile-hero .profile-hero-name{font-size:clamp(2rem,4vw,3.25rem)!important}
+#main-content .contact-profile-hero .profile-credential{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin:0 0 13px}
+#main-content .contact-profile-hero .profile-hero-copy p{max-width:650px}
+#main-content > .contact-profile-hero + .section{padding:18px 0 72px!important}
+#main-content .contact-list{width:min(1080px,100%);margin:0 auto;border:1px solid var(--theme-line)!important;border-radius:20px;overflow:hidden;background:var(--theme-surface)!important}
+#main-content .contact-row{grid-template-columns:minmax(0,1fr) auto;gap:22px;padding:0 clamp(15px,2vw,24px);background:transparent!important;border-bottom:1px solid var(--theme-line)!important;transition:background .18s ease}
+#main-content .contact-row:last-child{border-bottom:0!important}
+#main-content .contact-row:hover{background:color-mix(in srgb,var(--theme-surface-alt) 74%,transparent)!important}
+#main-content .contact-main{grid-template-columns:48px minmax(120px,.48fr) minmax(0,1fr);gap:17px;padding:17px 0}
+#main-content .contact-main strong{font-size:1.05rem;font-weight:650}
+#main-content .contact-main .desc{color:var(--theme-muted)!important;opacity:1;transform:none;animation:none;font-size:.9rem}
+#main-content .contact-icon{width:42px;height:42px;border-radius:13px;background:var(--theme-surface-alt)!important;border-color:var(--theme-line)!important}
+#main-content .copy-btn{min-width:106px;height:40px;border-radius:10px;background:var(--theme-bg)!important;color:var(--theme-text)!important;border-color:var(--theme-line)!important}
+#main-content .copy-btn:hover{border-color:var(--theme-accent)!important;color:var(--theme-accent)!important}
+#main-content .cv-row-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+#main-content .cv-action{min-height:40px;padding:0 12px;border-radius:10px;font-size:.82rem}
+#main-content .cv-action-secondary{background:transparent;color:var(--theme-text)}
+#main-content .contact-row[data-brand="whatsapp"] .contact-icon{color:#25d366!important;border-color:color-mix(in srgb,#25d366 30%,var(--theme-line))!important;background:color-mix(in srgb,#25d366 9%,var(--theme-surface))!important}
+#main-content .contact-row[data-brand="instagram"] .contact-icon{color:#d62976!important;border-color:color-mix(in srgb,#d62976 30%,var(--theme-line))!important;background:color-mix(in srgb,#d62976 8%,var(--theme-surface))!important}
+#main-content .contact-row[data-brand="instagram"] .instagram-icon{fill:none}
+#main-content .contact-row[data-brand="instagram"] .instagram-icon rect,
+#main-content .contact-row[data-brand="instagram"] .instagram-icon circle{stroke:url(#igConnectGradient)}
+#main-content .contact-row[data-brand="instagram"] .instagram-icon circle:last-child{fill:url(#igConnectGradient)}
+#main-content .contact-row[data-brand="email"] .contact-icon{color:var(--theme-text)!important}
+#main-content .contact-row[data-brand="linkedin"] .contact-icon{color:#0a66c2!important;border-color:color-mix(in srgb,#0a66c2 30%,var(--theme-line))!important;background:color-mix(in srgb,#0a66c2 8%,var(--theme-surface))!important}
+#main-content .contact-row[data-brand="github"] .contact-icon{color:var(--theme-text)!important}
+#main-content .contact-row[data-brand="cv"] .contact-icon{color:var(--theme-accent)!important}
+#site-header .brand-social-link[data-social="email"]{color:var(--theme-text)!important}
+#site-header .brand-social-link[data-social="whatsapp"]{color:#25d366!important}
+#site-header .brand-social-link[data-social="linkedin"]{color:#0a66c2!important}
+html[data-theme="dark"] #site-header .brand-social-link[data-social="github"]{color:#f2eadb!important}
+html[data-theme="light"] #site-header .brand-social-link[data-social="github"]{color:#171512!important}
+#site-header .brand-social-link[data-social="instagram"] svg{stroke:url(#igHeaderGradient)!important}
+#site-header .brand-social-link[data-social="instagram"] svg .instagram-dot{fill:url(#igHeaderGradient)!important}
+@media(max-width:760px){
+  #main-content .contact-main{grid-template-columns:46px minmax(0,1fr);gap:10px 14px}
+  #main-content .contact-main .desc{grid-column:2;grid-row:2;font-size:.82rem}
+  #main-content .contact-row{gap:12px}
+}
+@media(max-width:560px){
+  #main-content > .contact-profile-hero{padding:34px 0 10px!important}
+  #main-content .contact-profile-hero .profile-hero-card{grid-template-columns:1fr!important;justify-items:center;text-align:center;gap:15px!important;padding:12px 0 20px!important}
+  #main-content .contact-profile-hero .avatar-hero{width:126px!important;height:126px!important}
+  #main-content .profile-hero-copy .eyebrow{justify-content:center}
+  #main-content .contact-profile-hero .profile-credential{justify-content:center;font-size:.78rem}
+  #main-content > .contact-profile-hero + .section{padding:12px 0 56px!important}
+  #main-content .contact-list{border-radius:16px}
+  #main-content .contact-row{padding:0 12px;gap:9px}
+  #main-content .contact-main{grid-template-columns:42px minmax(0,1fr);gap:7px 11px;padding:14px 0}
+  #main-content .contact-icon{width:38px;height:38px}
+  #main-content .contact-main strong{font-size:.98rem}
+  #main-content .copy-btn{min-width:84px;padding:0 9px;font-size:.8rem}
+  #main-content .cv-row-actions{grid-column:1/-1;justify-content:flex-start;padding:0 0 13px 52px}
+  #main-content .cv-action{min-height:38px;padding:0 10px;font-size:.78rem}
+}

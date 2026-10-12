@@ -1,0 +1,15 @@
+Timothy Portfolio v29 — refined Rocket Navigator with staggered, subtle star twinkles.
+
+Pembaruan v29:
+- Bintang besar dan kecil berkedip dengan ritme berbeda agar terlihat hidup, tetap halus, dan tidak memenuhi layar.
+- Fokus keyboard dan hover menambah kilau ringan. Reduced motion mematikan seluruh animasi bintang.
+
+Pembaruan v28:
+- Siluet roket digambar ulang agar lebih ramping dan seimbang; sirip diperkecil dan dibuat simetris.
+- Detail orbit yang ramai dihapus. Jendela, nosel, api, dan bintang kecil dipertahankan dalam palet krem-emas.
+- Efek meluncur tetap muncul saat hover atau fokus keyboard, serta nonaktif dengan reduced motion.
+
+Pembaruan v27:
+- Rocket Navigator tetap berbentuk roket, dengan ilustrasi SVG baru: badan krem berlapis, sirip, jendela, nosel, api, orbit, dan bintang kecil.
+- Gerakan singkat saat diarahkan dengan mouse atau fokus keyboard memberi kesan roket meluncur. Efek dinonaktifkan jika perangkat memilih reduced motion.
+- Ilustrasi tetap ringan, tajam di berbagai ukuran layar, dan mengikuti tema hitam-krem situs.
